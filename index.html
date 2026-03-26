@@ -475,9 +475,10 @@
         </div>
       </div>
       <form class="contact-form" onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="你的暱稱" required />
-        <input type="text" placeholder="聯絡方式（LINE ID 或 IG）" required />
-        <textarea placeholder="想問什麼都可以說..."></textarea>
+       <input type="text" name="暱稱" placeholder="你的暱稱" required />
+<input type="text" name="聯絡方式" placeholder="聯絡方式（LINE ID 或 IG）" required />
+<textarea name="訊息" placeholder="想問什麼都可以說..."></textarea>
+
         <button type="submit">送出訊息</button>
       </form>
     </div>
@@ -556,11 +557,25 @@
   }
   loadBlog();
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  const res = await fetch('https://formspree.io/f/mvzvoyrj', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (res.ok) {
     alert('訊息已送出！Angus 會盡快回覆你 💬');
-    e.target.reset();
+    form.reset();
+  } else {
+    alert('送出失敗，請直接用 LINE 聯絡我！');
   }
+}
+
 </script>
 </body>
 </html>
