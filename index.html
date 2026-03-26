@@ -85,13 +85,9 @@
     .stat { text-align: center; }
     .stat-num {
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800; color: var(--accent);
-      line-height: 1;
+      font-weight: 800; color: var(--accent); line-height: 1;
     }
-    .stat-label {
-      font-size: 0.85rem; color: var(--muted);
-      margin-top: 6px;
-    }
+    .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
     .hero-cta {
       display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
     }
@@ -122,17 +118,13 @@
     }
     .section-title {
       font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800; line-height: 1.2;
-      margin-bottom: 16px;
+      font-weight: 800; line-height: 1.2; margin-bottom: 16px;
     }
     .section-desc {
       color: var(--muted); font-size: 1rem;
       max-width: 560px; margin-bottom: 56px;
     }
-    .divider {
-      border: none; border-top: 1px solid var(--border);
-      margin: 0;
-    }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
     /* ── ABOUT ── */
     #about { background: var(--surface); }
@@ -156,20 +148,14 @@
     /* ── FEATURES ── */
     #features { background: var(--bg); }
     .features-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
     }
     .feature-card {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       padding: 28px 24px; border-radius: 12px;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .feature-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-    }
+    .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); }
     .feature-icon { font-size: 1.8rem; margin-bottom: 14px; }
     .feature-card h3 { font-size: 1rem; margin-bottom: 8px; }
     .feature-card p { font-size: 0.875rem; color: var(--muted); }
@@ -182,24 +168,18 @@
       gap: 20px;
     }
     .blog-card {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: 12px; overflow: hidden;
       text-decoration: none; color: var(--text);
       transition: border-color 0.2s, transform 0.2s;
       display: flex; flex-direction: column;
     }
     .blog-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-    .blog-card-cover {
-      width: 100%; height: 160px;
-      background: var(--border);
-      object-fit: cover;
-    }
+    .blog-card-cover { width: 100%; height: 160px; background: var(--border); object-fit: cover; }
     .blog-card-cover-placeholder {
       width: 100%; height: 160px;
       background: linear-gradient(135deg, #1e1a12, #2a2520);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
     }
     .blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
     .blog-card-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; }
@@ -207,8 +187,157 @@
     .blog-card-summary { font-size: 0.85rem; color: var(--muted); flex: 1; }
     .blog-loading { color: var(--muted); text-align: center; padding: 40px; }
 
+    /* ── FAQ ── */
+    #faq { background: var(--surface); }
+
+    .faq-line-banner {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(200,169,110,0.06);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 14px;
+      padding: 18px 24px; margin-bottom: 32px;
+      text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .faq-line-banner:hover {
+      border-color: var(--accent);
+      background: rgba(200,169,110,0.1);
+    }
+    .faq-line-icon {
+      width: 44px; height: 44px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .faq-line-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--text); }
+    .faq-line-text span { font-size: 0.85rem; color: var(--muted); }
+    .faq-arrow { margin-left: auto; font-size: 1.4rem; color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--card); border-radius: 12px;
+      border: 1px solid var(--border); overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: rgba(200,169,110,0.4); }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 24px;
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      cursor: pointer; text-align: left;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .faq-plus {
+      font-size: 1.4rem; color: var(--accent);
+      transition: transform 0.3s; flex-shrink: 0;
+    }
+    .faq-item.open .faq-plus { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      padding: 0 24px;
+      font-size: 0.9rem; color: var(--muted); line-height: 1.8;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 24px 20px; }
+
+    /* ── JOBS ── */
+    #jobs { background: var(--bg); }
+    #jobs .section-title { text-align: center; }
+    #jobs .section-desc { text-align: center; margin: 0 auto 48px; }
+
+    .jobs-scene {
+      perspective: 1000px;
+      display: flex; justify-content: center;
+    }
+    .jobs-card-wrap {
+      width: 300px; height: 400px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      cursor: pointer;
+    }
+    .jobs-card-wrap.flipped { transform: rotateY(180deg); }
+
+    .jobs-card-front,
+    .jobs-card-back {
+      position: absolute; inset: 0;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 16px; padding: 40px 32px;
+      text-align: center;
+    }
+
+    /* 正面 */
+    .jobs-card-front {
+      background: linear-gradient(160deg, #1e1a12 0%, #0a0a0a 100%);
+      border: 1px solid rgba(200,169,110,0.3);
+    }
+    .jobs-card-front::before {
+      content: '';
+      position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(200,169,110,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .jobs-front-icon { font-size: 4rem; }
+    .jobs-front-title { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+    .jobs-front-sub { font-size: 0.9rem; color: var(--muted); }
+    .jobs-front-hint {
+      margin-top: 8px; font-size: 0.8rem; color: rgba(200,169,110,0.5);
+      letter-spacing: 0.05em;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* 背面 */
+    .jobs-card-back {
+      background: linear-gradient(160deg, #1e1a12 0%, #0a0a0a 100%);
+      border: 1px solid rgba(200,169,110,0.5);
+      transform: rotateY(180deg);
+      gap: 14px;
+    }
+    .jobs-back-title {
+      font-size: 1.2rem; font-weight: 800; color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .jobs-back-list {
+      list-style: none; width: 100%;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .jobs-back-list li {
+      background: rgba(200,169,110,0.08);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 8px; padding: 10px 16px;
+      font-size: 0.9rem; color: var(--text);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .jobs-back-list li span.tag {
+      font-size: 0.75rem; color: var(--accent);
+      background: rgba(200,169,110,0.12);
+      padding: 2px 8px; border-radius: 999px;
+      white-space: nowrap;
+    }
+    .jobs-back-btn {
+      margin-top: 8px;
+      background: var(--accent); color: #0a0a0a;
+      font-weight: 700; padding: 12px 28px;
+      border-radius: 8px; text-decoration: none;
+      font-size: 0.95rem; width: 100%; text-align: center;
+      transition: background 0.2s;
+      display: block;
+    }
+    .jobs-back-btn:hover { background: var(--accent2); }
+    .jobs-hint { text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--muted); }
+
     /* ── CONTACT ── */
-    #contact { background: var(--bg); }
+    #contact { background: var(--surface); }
     .contact-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 48px; align-items: start;
@@ -224,30 +353,17 @@
     }
     .contact-link:hover { border-color: var(--accent); }
     .contact-link .icon { font-size: 1.2rem; }
-
-    /* ── LINE CTA BOX ── */
     .line-cta-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 16px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 40px 32px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; gap: 16px;
     }
-    .line-cta-box p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin: 0;
-    }
+    .line-cta-box p { color: var(--muted); font-size: 0.95rem; margin: 0; }
     .line-cta-box .btn-primary {
-      font-size: 1.05rem;
-      padding: 16px 40px;
-      border-radius: 10px;
-      width: 100%;
+      font-size: 1.05rem; padding: 16px 40px;
+      border-radius: 10px; width: 100%;
     }
 
     /* ── FOOTER ── */
@@ -266,27 +382,24 @@
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 28px; }
       .features-grid { grid-template-columns: 1fr; }
+      .jobs-card-wrap { width: 280px; height: 380px; }
     }
 
     /* ── SHINE TEXT ── */
     .hero-sub-shine {
       font-size: 3.5rem !important;
-      font-weight: 800;
-      line-height: 1.6;
-      text-align: center;
-      margin: 0 auto 40px;
+      font-weight: 800; line-height: 1.6;
+      text-align: center; margin: 0 auto 40px;
       letter-spacing: 0.05em;
     }
     @media (max-width: 768px) {
       .hero-sub-shine { font-size: 2.4rem !important; }
     }
     .hero-sub-shine span {
-      display: inline-block;
-      color: transparent;
+      display: inline-block; color: transparent;
       background: linear-gradient(90deg, #888 0%, #ffffff 40%, #c8a96e 60%, #888 100%);
       background-size: 300% auto;
-      -webkit-background-clip: text;
-      background-clip: text;
+      -webkit-background-clip: text; background-clip: text;
       animation: shine 6s linear infinite;
     }
     .hero-sub-shine span:nth-child(1)  { animation-delay: 0.00s; }
@@ -310,21 +423,6 @@
       0%   { background-position: 200% center; }
       100% { background-position: -200% center; }
     }
-
-    /* ── LOGO ── */
-    .hero-logo-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 0 40px;
-      width: 100%;
-    }
-    .hero-logo {
-      width: 280px;
-      height: auto;
-      filter: invert(1);
-      opacity: 0.9;
-    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet"/>
 </head>
@@ -337,23 +435,21 @@
     <a href="#about">關於我</a>
     <a href="#features">為什麼選我</a>
     <a href="#blog">部落格</a>
+    <a href="#faq">常見問題</a>
+    <a href="#jobs">職缺</a>
     <a href="#contact">聯絡我</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-
   <div class="hero-badge">八大最誠實經紀</div>
-
   <p class="hero-sub-shine">
     <span>不</span><span>要</span><span>讓</span><span>未</span><span>來</span><span>的</span><span>你</span>
     <br/>
     <span>討</span><span>厭</span><span>現</span><span>在</span><span>的</span><span>自</span><span>己</span>
   </p>
-
   <p class="hero-sub">不簽合約、不壓薪水、自由排班</p>
-
   <div class="hero-stats">
     <div class="stat">
       <div class="stat-num" id="counter-years">0</div>
@@ -364,12 +460,10 @@
       <div class="stat-label">個人面試人數</div>
     </div>
   </div>
-
   <div class="hero-cta">
     <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="btn-primary">立即加我 LINE</a>
     <a href="#about" class="btn-outline">了解更多</a>
   </div>
-
 </section>
 
 <hr class="divider"/>
@@ -456,6 +550,135 @@
 
 <hr class="divider"/>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <p class="section-label">常見問題</p>
+    <h2 class="section-title">常見問題 FAQ</h2>
+    <p class="section-desc">在做任何決定之前，先把疑慮解開</p>
+
+    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="faq-line-banner">
+      <div class="faq-line-icon">💬</div>
+      <div class="faq-line-text">
+        <strong>找不到答案？點擊直接詢問</strong>
+        <span>24 小時在線回覆，真人客服為您解答</span>
+      </div>
+      <div class="faq-arrow">›</div>
+    </a>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          酒店公關新手完全沒有經驗，可以嗎？
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-answer">
+          可以。我專門提供新手入行輔導，不需要任何相關背景或經驗。會一對一說明工作內容、環境、薪資計算方式及注意事項，讓你在完全了解後再做決定，不會有任何壓力。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          酒店工作的薪水怎麼算？真的是高薪工作嗎？
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-answer">
+          是的，酒店公關屬於台灣少數真正高薪的工作選項之一。時薪約為一般上班族的 3–5 倍，薪資全程透明，入行前會完整說明計算方式，不會有隱藏費用或扣款。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          酒店公關工作會不會被強迫做不想做的事？
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-answer">
+          不會。所有工作內容與場合安排都會事先說明，你有完整的選擇權。若遇到任何不舒適的狀況，可以隨時聯繫我處理。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          做酒店工作安全嗎？有哪些保障？
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-answer">
+          安全是最重視的核心原則。工作環境事先評估，場合與人員都有嚴格篩選。任何超出範圍的要求都可以直接拒絕，我會立即介入處理。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          做酒店公關，家人或朋友一定要知道嗎？
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-answer">
+          不需要。是否告知家人或朋友完全由你自己決定，個人隱私嚴格保護，不會主動對外揭露任何個人資訊。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          酒店工作可以只做短期或兼職嗎？
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-answer">
+          可以。時間完全彈性，可短期、兼職或配合自己的行程排班，不強制綁定長期合約。很多人選擇利用課餘或下班後的時間從事這份高薪兼職。
+        </div>
+      </div>
+      <!-- 最後一題：詢問更多 → LINE -->
+      <div class="faq-item">
+        <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="faq-question" style="text-decoration:none; color: var(--accent);">
+          還有其他問題？詢問更多
+          <span class="faq-plus" style="font-size:1.2rem;">›</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- JOBS -->
+<section id="jobs">
+  <div class="container">
+    <p class="section-label">專屬職缺</p>
+    <h2 class="section-title">解鎖未來</h2>
+    <p class="section-desc">選擇適合你的職位，開啟全新人生</p>
+
+    <div class="jobs-scene">
+      <div class="jobs-card-wrap" id="jobsCard" onclick="flipCard()">
+        <!-- 正面 -->
+        <div class="jobs-card-front">
+          <div class="jobs-front-icon">🎁</div>
+          <div class="jobs-front-title">Angus 專屬</div>
+          <div class="jobs-front-sub">點擊開啟職缺</div>
+          <div class="jobs-front-hint">▼ 點我翻開 ▼</div>
+        </div>
+        <!-- 背面 -->
+        <div class="jobs-card-back">
+          <div class="jobs-back-title">✨ 目前開放職位</div>
+          <ul class="jobs-back-list">
+            <li>
+              <span>🍸 酒店公關</span>
+              <span class="tag">高薪</span>
+            </li>
+            <li>
+              <span>🎤 陪唱小姐</span>
+              <span class="tag">彈性</span>
+            </li>
+            <li>
+              <span>💃 制服店</span>
+              <span class="tag">新手OK</span>
+            </li>
+          </ul>
+          <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="jobs-back-btn" onclick="event.stopPropagation()">
+            💬 加 LINE 了解詳情
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="jobs-hint">👆 點擊卡片開啟專屬職缺</p>
+  </div>
+</section>
+
+<hr class="divider"/>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -475,15 +698,12 @@
           </a>
         </div>
       </div>
-
-      <!-- LINE CTA 取代表單 -->
       <div class="line-cta-box">
         <p>直接加 LINE 詢問，回覆最快 🚀</p>
         <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="btn-primary">
           💬 點我加 LINE，直接詢問最快
         </a>
       </div>
-
     </div>
   </div>
 </section>
@@ -559,6 +779,17 @@
     }
   }
   loadBlog();
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function flipCard() {
+    document.getElementById('jobsCard').classList.toggle('flipped');
+  }
 </script>
 </body>
 </html>
