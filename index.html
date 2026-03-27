@@ -22,30 +22,10 @@
       position: relative;
       isolation: isolate;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(ellipse 80% 60% at 20% 30%, rgba(30,25,20,0.95) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 80% 70%, rgba(25,20,15,0.9) 0%, transparent 65%),
-        radial-gradient(ellipse 100% 50% at 50% 50%, rgba(15,12,8,0.8) 0%, transparent 80%),
-        #080808;
-      animation: velvetFlow 18s ease-in-out infinite alternate;
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(ellipse 40% 30% at 70% 20%, rgba(200,169,110,0.04) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 30% 80%, rgba(180,150,90,0.03) 0%, transparent 55%),
-        radial-gradient(ellipse 35% 45% at 85% 60%, rgba(200,169,110,0.025) 0%, transparent 50%),
-        radial-gradient(ellipse 45% 35% at 15% 45%, rgba(160,130,70,0.03) 0%, transparent 55%);
-      animation: velvetGold 22s ease-in-out infinite alternate-reverse;
-    }
+    body::before,
+body::after {
+  display: none;
+}
     @keyframes velvetFlow {
       0%   { transform: scale(1)    translate(0%,    0%);   }
       25%  { transform: scale(1.04) translate(-1.5%, 2%);   }
@@ -518,7 +498,7 @@
 <body>
 
 <!-- 絲絨紋理層 -->
-<div class="velvet-texture"></div>
+<canvas id="velvet-bg"></canvas>
 
 <!-- 浮動 LINE 按鈕 -->
 <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="float-line">
@@ -1214,6 +1194,134 @@
     event.stopPropagation();
     container.classList.add('revealed');
   }
+  <script>
+(function() {
+  const canvas = document.getElementById('velvet-bg');
+  const ctx = canvas.getContext('2d');
+
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.style.zIndex = '-1';
+  canvas.style.pointerEvents = 'none';
+
+  let W, H;
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // 波浪控制點
+  const waves = [
+    { x: 0.2, y: 0.3, r: 0.55, speedX: 0.00018, speedY: 0.00013, ox: 0, oy: 0 },
+    { x: 0.7, y: 0.6, r: 0.50, speedX:-0.00015, speedY: 0.00020, ox: 0, oy: 0 },
+    { x: 0.5, y: 0.1, r: 0.45, speedX: 0.00022, speedY:-0.00017, ox: 0, oy: 0 },
+    { x: 0.1, y: 0.8, r: 0.40, speedX:-0.00019, speedY:-0.00014, ox: 0, oy: 0 },
+    { x: 0.85, y: 0.2, r: 0.48, speedX: 0.00016, speedY: 0.00021, ox: 0, oy: 0 },
+    { x: 0.4, y: 0.9, r: 0.42, speedX:-0.00021, speedY: 0.00015, ox: 0, oy: 0 },
+  ];
+
+  // 金色光點
+  const glints = [
+    { x: 0.65, y: 0.25, speedX: 0.00012, speedY: 0.00009, ox: 0, oy: 0 },
+    { x: 0.30, y: 0.70, speedX:-0.00010, speedY: 0.00014, ox: 0, oy: 0 },
+    { x: 0.80, y: 0.55, speedX: 0.00008, speedY:-0.00011, ox: 0, oy: 0 },
+  ];
+
+  let t = 0;
+
+  function draw() {
+    t++;
+
+    // 底色
+    ctx.fillStyle = '#070707';
+    ctx.fillRect(0, 0, W, H);
+
+    // 布料波浪光澤層
+    waves.forEach(w => {
+      w.ox += w.speedX;
+      w.oy += w.speedY;
+      const cx = (w.x + Math.sin(w.ox * 1000) * 0.18) * W;
+      const cy = (w.y + Math.cos(w.oy * 1000) * 0.18) * H;
+      const r  = w.r * Math.max(W, H);
+
+      const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      grad.addColorStop(0,   'rgba(80, 75, 70, 0.22)');
+      grad.addColorStop(0.3, 'rgba(55, 50, 45, 0.16)');
+      grad.addColorStop(0.6, 'rgba(30, 28, 25, 0.10)');
+      grad.addColorStop(1,   'rgba(0,  0,  0,  0)');
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+    });
+
+    // 布料紋理線條（模擬纖維）
+    ctx.save();
+    for (let i = 0; i < 5; i++) {
+      const phase = t * 0.0004 + i * 1.2;
+      const y0 = H * (0.1 + i * 0.18 + Math.sin(phase) * 0.06);
+      const cp1x = W * (0.2 + Math.sin(phase * 0.7) * 0.15);
+      const cp1y = y0 - H * (0.08 + Math.cos(phase * 0.5) * 0.05);
+      const cp2x = W * (0.6 + Math.cos(phase * 0.9) * 0.15);
+      const cp2y = y0 + H * (0.08 + Math.sin(phase * 0.6) * 0.05);
+      const x1   = W * (-0.05);
+      const x2   = W * (1.05);
+
+      const lineGrad = ctx.createLinearGradient(x1, y0, x2, y0);
+      lineGrad.addColorStop(0,   'rgba(120,115,105,0)');
+      lineGrad.addColorStop(0.2, 'rgba(120,115,105,0.06)');
+      lineGrad.addColorStop(0.5, 'rgba(150,140,125,0.10)');
+      lineGrad.addColorStop(0.8, 'rgba(120,115,105,0.06)');
+      lineGrad.addColorStop(1,   'rgba(120,115,105,0)');
+
+      ctx.beginPath();
+      ctx.moveTo(x1, y0);
+      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x2, y0);
+      ctx.strokeStyle = lineGrad;
+      ctx.lineWidth = H * (0.06 + Math.sin(phase * 0.3) * 0.02);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // 金色光澤點
+    glints.forEach(g => {
+      g.ox += g.speedX;
+      g.oy += g.speedY;
+      const gx = (g.x + Math.sin(g.ox * 1000) * 0.25) * W;
+      const gy = (g.y + Math.cos(g.oy * 1000) * 0.25) * H;
+      const gr = 0.35 * Math.max(W, H);
+
+      const gGrad = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr);
+      gGrad.addColorStop(0,   'rgba(200,169,110,0.055)');
+      gGrad.addColorStop(0.4, 'rgba(180,150, 90,0.030)');
+      gGrad.addColorStop(1,   'rgba(0,  0,   0, 0)');
+
+      ctx.fillStyle = gGrad;
+      ctx.fillRect(0, 0, W, H);
+    });
+
+    // 整體暗角
+    const vignette = ctx.createRadialGradient(
+      W * 0.5, H * 0.5, 0,
+      W * 0.5, H * 0.5, Math.max(W, H) * 0.75
+    );
+    vignette.addColorStop(0,   'rgba(0,0,0,0)');
+    vignette.addColorStop(0.6, 'rgba(0,0,0,0.15)');
+    vignette.addColorStop(1,   'rgba(0,0,0,0.65)');
+    ctx.fillStyle = vignette;
+    ctx.fillRect(0, 0, W, H);
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+</script>
+
 </script>
 </body>
 </html>
