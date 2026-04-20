@@ -4,20 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AS娛樂｜八大最誠實經紀 大頭</title>
-
-  <!-- SEO -->
   <meta name="description" content="大頭，八大最誠實經紀人，七年經驗3000位面試。不簽合約、不壓薪水、自由排班。台北酒店公關招募諮詢完全免費。"/>
   <meta name="keywords" content="酒店經紀,八大經紀,台北酒店公關,酒店打工,兼職,酒店經紀人推薦"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://as-ent-tw.com/"/>
-
-  <!-- Open Graph -->
   <meta property="og:title" content="AS娛樂｜八大最誠實經紀 大頭"/>
   <meta property="og:description" content="不簽合約、不壓薪水、自由排班。七年經驗，3000位面試，最透明的經紀人。"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://as-ent-tw.com/"/>
   <meta property="og:image" content="https://as-ent-tw.com/og-image.jpg"/>
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -26,67 +22,27 @@
       --accent: #c8a96e; --accent2: #e0c080;
     }
     html { scroll-behavior: smooth; }
-
-    /* 全站流動絲絨背景 */
     body {
-      background: #080808;
-      color: var(--text);
+      background: #080808; color: var(--text);
       font-family: 'Noto Sans TC', sans-serif;
-      line-height: 1.7;
-      position: relative;
-      isolation: isolate;
+      line-height: 1.7; position: relative; isolation: isolate;
     }
-    body::before,
-body::after {
-  display: none;
-}
-
-    /* 絲絨紋理疊加層 */
-    .velvet-texture {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      opacity: 0.18;
-      pointer-events: none;
-      background-image:
-        repeating-linear-gradient(
-          105deg,
-          transparent,
-          transparent 2px,
-          rgba(255,255,255,0.008) 2px,
-          rgba(255,255,255,0.008) 4px
-        ),
-        repeating-linear-gradient(
-          15deg,
-          transparent,
-          transparent 3px,
-          rgba(255,255,255,0.005) 3px,
-          rgba(255,255,255,0.005) 6px
-        );
-      animation: velvetShimmer 30s linear infinite;
-    }
-    @keyframes velvetShimmer {
-      0%   { background-position: 0px 0px,    0px 0px;   }
-      100% { background-position: 200px 400px, -300px 200px; }
-    }
+    body::before, body::after { display: none; }
 
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 14px 40px;
-      background: rgba(8,8,8,0.8); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(8,8,8,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(200,169,110,0.12);
     }
     .nav-logo { display: flex; align-items: center; gap: 8px; }
     .nav-logo img { height: 40px; width: auto; display: block; }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
-    }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.06em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -98,355 +54,48 @@ body::after {
       flex-direction: column; padding: 16px 24px 24px;
     }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a { color: var(--muted); text-decoration: none; font-size: 1rem; padding: 14px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .mobile-menu a { color: var(--muted); text-decoration: none; font-size: 1rem; padding: 14px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; letter-spacing: 0.06em; }
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu a:hover { color: var(--accent); }
 
     /* HERO */
     #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
+      min-height: 100vh; display: flex; flex-direction: column;
       justify-content: center; align-items: center; text-align: center;
-      padding: 120px 24px 80px;
-      position: relative; overflow: hidden;
-      background: transparent;
+      padding: 120px 24px 80px; position: relative; overflow: hidden; background: transparent;
     }
     #hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 50% 0%,   rgba(200,169,110,0.07) 0%, transparent 60%),
-        radial-gradient(ellipse at 50% 100%, rgba(200,169,110,0.04) 0%, transparent 60%);
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200,169,110,0.07) 0%, transparent 60%),
+                  radial-gradient(ellipse at 50% 100%, rgba(200,169,110,0.04) 0%, transparent 60%);
       pointer-events: none; z-index: 0;
     }
     #hero > * { position: relative; z-index: 1; }
 
-    /* HERO 元素 */
+    /* 膠囊標籤群 */
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin-bottom: 36px;
+    }
     .hero-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #ffffff;
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-      padding: 7px 20px;
-      border-radius: 999px;
-      margin-bottom: 36px;
+      background: rgba(200,169,110,0.06);
+      border: 1px solid rgba(200,169,110,0.3);
+      color: var(--accent);
+      font-size: 0.8rem; letter-spacing: 0.14em;
+      padding: 6px 18px; border-radius: 999px;
+      backdrop-filter: blur(8px);
+      transition: background 0.2s, border-color 0.2s;
     }
-    .hero-sub {
-      color: #aaaaaa;
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
-      margin-bottom: 48px;
-      text-align: center;
-    }
-    .hero-stats {
-      display: flex;
-      flex-direction: row;
-      gap: 64px;
-      justify-content: center;
-      align-items: flex-start;
-      margin-bottom: 48px;
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-size: 2.6rem; font-weight: 900;
-      color: transparent;
-      background: linear-gradient(135deg, #c8a96e 0%, #e0c080 50%, #c8a96e 100%);
-      -webkit-background-clip: text; background-clip: text;
-      letter-spacing: 0.04em; line-height: 1.1;
-    }
-    .stat-label {
-      font-size: 0.82rem; color: #888888;
-      letter-spacing: 0.12em; margin-top: 6px;
-    }
-    .hero-cta {
-      display: flex; flex-direction: row; gap: 16px;
-      justify-content: center; align-items: center; flex-wrap: wrap;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(135deg, #c8a96e, #e0c080);
-      color: #0a0a0a; font-weight: 800; font-size: 1rem;
-      padding: 14px 36px; border-radius: 10px;
-      text-decoration: none; letter-spacing: 0.08em;
-      transition: opacity 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
-    .btn-outline {
-      display: inline-block; background: transparent;
-      color: #aaaaaa; font-weight: 600; font-size: 1rem;
-      padding: 14px 36px; border-radius: 10px;
-      border: 1px solid #555555; text-decoration: none;
-      letter-spacing: 0.08em;
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
-    }
-    .btn-outline:hover { border-color: #c8a96e; color: #ffffff; transform: translateY(-2px); }
-
-    /* SECTION BASE */
-    section { padding: 96px 24px; }
-    .container { max-width: 900px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.85rem; letter-spacing: 0.25em; color: var(--accent);
-      text-transform: uppercase; margin-bottom: 14px;
-      text-align: center; display: block;
-    }
-    .section-title {
-      font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800;
-      line-height: 1.25; margin-bottom: 20px;
-      text-align: center; letter-spacing: 0.06em;
-    }
-    .section-desc {
-      color: var(--muted); font-size: 1rem; max-width: 560px;
-      margin-bottom: 56px; text-align: center;
-      line-height: 2; letter-spacing: 0.05em;
-      margin-left: auto; margin-right: auto;
-    }
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-    /* SECTION 半透明背景讓絲絨透出 */
-    #about    { background: rgba(20,20,20,0.75); backdrop-filter: blur(2px); }
-    #features { background: rgba(10,10,10,0.55); backdrop-filter: blur(2px); }
-    #jobs     { background: rgba(20,20,20,0.75); backdrop-filter: blur(2px); }
-    #faq      { background: rgba(10,10,10,0.55); backdrop-filter: blur(2px); }
-    #guide    { background: rgba(20,20,20,0.75); backdrop-filter: blur(2px); }
-    #blog     { background: rgba(10,10,10,0.55); backdrop-filter: blur(2px); }
-    #contact  { background: rgba(10,10,10,0.55); backdrop-filter: blur(2px); text-align: center; }
-    footer    { background: rgba(20,20,20,0.8);  backdrop-filter: blur(2px); }
-
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .about-text p { color: var(--muted); margin-bottom: 20px; line-height: 2; letter-spacing: 0.05em; }
-    .about-text strong { color: var(--text); }
-    .about-text a { color: var(--accent); text-decoration: underline; }
-    .about-text .section-label { text-align: left; }
-    .about-highlights { display: flex; flex-direction: column; gap: 16px; }
-    .highlight-item {
-      background: rgba(26,26,26,0.8); border: 1px solid var(--border);
-      border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px;
-    }
-    .highlight-item h4 { font-size: 0.95rem; margin-bottom: 6px; letter-spacing: 0.05em; }
-    .highlight-item p { font-size: 0.85rem; color: var(--muted); margin: 0; letter-spacing: 0.04em; }
-
-    /* FEATURES */
-    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .feature-card {
-      background: rgba(26,26,26,0.8); border: 1px solid var(--border);
-      padding: 28px 24px; border-radius: 12px;
-      transition: border-color 0.2s, transform 0.2s; text-align: center;
-    }
-    .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-    .feature-icon { font-size: 1.8rem; margin-bottom: 14px; }
-    .feature-card h3 { font-size: 1.05rem; margin-bottom: 10px; letter-spacing: 0.06em; }
-    .feature-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.9; letter-spacing: 0.04em; }
-
-    /* FAQ */
-    .faq-line-banner {
-      display: flex; align-items: center; gap: 16px;
-      background: rgba(200,169,110,0.06); border: 1px solid rgba(200,169,110,0.3);
-      border-radius: 14px; padding: 18px 24px; margin-top: 24px;
-      text-decoration: none; color: var(--text); transition: border-color 0.2s, background 0.2s;
-    }
-    .faq-line-banner:hover { border-color: var(--accent); background: rgba(200,169,110,0.1); }
-    .faq-line-icon {
-      width: 44px; height: 44px; background: var(--accent); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
-    }
-    .faq-line-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: 0.05em; }
-    .faq-line-text span { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.04em; }
-    .faq-arrow { margin-left: auto; font-size: 1.4rem; color: var(--accent); }
-    .faq-list { display: flex; flex-direction: column; gap: 12px; }
-    .faq-item {
-      background: rgba(26,26,26,0.8); border-radius: 12px;
-      border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s;
-    }
-    .faq-item.open { border-color: rgba(200,169,110,0.4); }
-    .faq-question {
-      width: 100%; background: none; border: none;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 24px; font-size: 1rem; font-weight: 700; color: var(--text);
-      cursor: pointer; text-align: left; font-family: 'Noto Sans TC', sans-serif;
-      letter-spacing: 0.05em;
-    }
-    .faq-plus { font-size: 1.4rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; }
-    .faq-item.open .faq-plus { transform: rotate(45deg); }
-    .faq-answer {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.3s;
-      padding: 0 24px; font-size: 0.9rem; color: var(--muted); line-height: 2; letter-spacing: 0.04em;
-    }
-    .faq-item.open .faq-answer { max-height: 300px; padding: 0 24px 20px; }
-
-    /* GUIDE */
-    .nav-menu-guide {
-      display: flex; flex-wrap: wrap; gap: 10px;
-      justify-content: center; margin-bottom: 30px;
-      background: rgba(0,0,0,0.4); padding: 15px;
-      border-radius: 20px; border: 1px solid var(--border);
-      box-shadow: 0 0 15px rgba(200,169,110,0.1);
-      transition: all 0.5s;
-    }
-    body.danger-zone .nav-menu-guide { border-color: #ff0000; box-shadow: 0 0 20px rgba(255,0,0,0.5); }
-    .nav-btn-guide {
-      background: transparent; border: 2px solid transparent;
-      color: var(--muted); padding: 8px 16px; border-radius: 30px;
-      font-weight: bold; font-size: 0.9rem; cursor: pointer;
-      transition: 0.3s; font-family: 'Noto Sans TC', sans-serif; letter-spacing: 0.04em;
-    }
-    .nav-btn-guide.active { background: var(--accent); color: #0a0a0a; box-shadow: 0 0 10px rgba(200,169,110,0.5); }
-    .nav-btn-guide:hover:not(.active) { border-color: var(--accent); color: var(--text); }
-    .nav-btn-guide.btn-danger-guide { border-color: #ff4d4d; color: #ff4d4d; }
-    .nav-btn-guide.btn-danger-guide.active { background: #ff4d4d; color: #fff; box-shadow: 0 0 10px rgba(255,77,77,0.5); }
-    .guide-page { display: none; }
-    .guide-page.active { display: block; }
-    .term-card-guide {
-      background: rgba(26,26,26,0.8); border: 1px solid var(--border);
-      border-radius: 12px; margin-bottom: 12px; overflow: hidden;
-      cursor: pointer; transition: border-color 0.2s;
-    }
-    .term-card-guide:hover { border-color: var(--accent); }
-    .term-card-guide.open { border-color: rgba(200,169,110,0.4); }
-    .term-header-guide {
-      padding: 18px 24px; font-weight: 700; font-size: 1rem;
-      display: flex; justify-content: space-between; align-items: center;
-      color: var(--text); letter-spacing: 0.05em;
-    }
-    .term-header-guide::after { content: '+'; color: var(--accent); font-size: 1.4rem; transition: transform 0.3s; flex-shrink: 0; }
-    .term-card-guide.open .term-header-guide::after { transform: rotate(45deg); }
-    .term-body-guide {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
-      padding: 0 24px; color: var(--muted); font-size: 0.9rem; line-height: 2; letter-spacing: 0.04em;
-    }
-    .term-card-guide.open .term-body-guide { max-height: 1000px; padding: 0 24px 20px; }
-    .term-body-guide p { margin-bottom: 10px; }
-    .guide-highlight { color: var(--accent); font-weight: 700; }
-    .scratch-container-guide {
-      background: rgba(200,169,110,0.08); border: 1px dashed rgba(200,169,110,0.4);
-      border-radius: 8px; padding: 14px 18px; margin-top: 12px;
-      cursor: pointer; position: relative; overflow: hidden; transition: 0.3s;
-    }
-    .scratch-container-guide:hover { background: rgba(200,169,110,0.12); }
-    .scratch-mask-guide { text-align: center; color: var(--accent); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; }
-    .scratch-text-guide { display: none; color: var(--muted); font-size: 0.875rem; line-height: 2; letter-spacing: 0.04em; }
-    .scratch-container-guide.revealed .scratch-mask-guide { display: none; }
-    .scratch-container-guide.revealed .scratch-text-guide { display: block; }
-    body.danger-zone { background-color: #0d0000; }
-    body.danger-zone #guide { background: rgba(26,0,0,0.85); }
-    .alert-card-guide {
-      background: rgba(255,0,0,0.06); border: 1px solid rgba(255,77,77,0.4);
-      border-radius: 12px; padding: 28px; color: var(--text);
-      font-size: 0.9rem; line-height: 2; letter-spacing: 0.04em;
-    }
-    .alert-title-guide { font-size: 1.3rem; font-weight: 900; color: #ff4d4d; text-align: center; margin-bottom: 16px; letter-spacing: 0.1em; }
-    .alert-highlight-guide { color: #ff4d4d; font-weight: 700; }
-    .alert-card-guide ul { padding-left: 20px; margin-bottom: 16px; }
-    .alert-card-guide li { margin-bottom: 10px; }
-    .guide-disclaimer {
-      text-align: center; color: var(--muted); font-size: 0.8rem;
-      margin-top: 32px; padding: 16px;
-      border: 1px dashed var(--border); border-radius: 8px;
-      letter-spacing: 0.05em; line-height: 2;
+    .hero-badge:hover { background: rgba(200,169,110,0.12); border-color: var(--accent); }
+    .hero-badge-hot {
+      background: rgba(200,169,110,0.12);
+      border-color: var(--accent);
+      color: var(--accent2);
+      font-weight: 700;
     }
 
-    /* BLOG */
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-    .blog-card {
-      background: rgba(26,26,26,0.8); border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden; text-decoration: none; color: var(--text);
-      transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column;
-    }
-    .blog-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-    .blog-card-cover { width: 100%; height: 160px; background: var(--border); object-fit: cover; }
-    .blog-card-cover-placeholder {
-      width: 100%; height: 160px;
-      background: linear-gradient(135deg, #1e1a12, #2a2520);
-      display: flex; align-items: center; justify-content: center; font-size: 2rem;
-    }
-    .blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-    .blog-card-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; letter-spacing: 0.05em; }
-    .blog-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.04em; }
-    .blog-card-summary { font-size: 0.85rem; color: var(--muted); flex: 1; line-height: 1.9; }
-    .blog-loading { color: var(--muted); text-align: center; padding: 40px; }
-
-    /* JOBS */
-    .jobs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .job-card {
-      background: rgba(26,26,26,0.8); border: 1px solid var(--border); border-radius: 16px;
-      padding: 32px 28px; display: flex; flex-direction: column; gap: 20px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .job-card:hover { border-color: #555; transform: translateY(-6px); }
-    .job-card-header { display: flex; justify-content: space-between; align-items: center; }
-    .job-card-title { font-size: 1.3rem; font-weight: 800; color: var(--text); letter-spacing: 0.06em; }
-    .job-badge { font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.05em; }
-    .badge-pr    { background: rgba(240,240,240,0.12); color: #f0f0f0; border: 1px solid rgba(240,240,240,0.35); }
-    .badge-agent { background: rgba(240,240,240,0.12); color: #f0f0f0; border: 1px solid rgba(240,240,240,0.35); }
-    .badge-beauty{ background: rgba(240,240,240,0.12); color: #f0f0f0; border: 1px solid rgba(240,240,240,0.35); }
-    .job-card-desc { font-size: 0.9rem; color: var(--muted); line-height: 2; letter-spacing: 0.04em; }
-    .job-card-perks { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-    .job-card-perks li { display: flex; align-items: center; gap: 10px; font-size: 0.875rem; color: var(--text); letter-spacing: 0.04em; }
-    .job-card-perks li::before { content: '✓'; color: #aaaaaa; font-weight: 700; flex-shrink: 0; }
-    .job-btn {
-      display: block; text-align: center; padding: 13px 0; border-radius: 10px;
-      font-size: 0.95rem; font-weight: 700; text-decoration: none;
-      background: transparent; color: #cccccc; border: 1px solid #555555;
-      transition: opacity 0.2s, transform 0.15s; letter-spacing: 0.05em;
-    }
-    .job-btn:hover { opacity: 0.8; transform: translateY(-1px); }
-
-    /* CONTACT */
-    .contact-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .contact-badge {
-      display: inline-block; background: rgba(200,169,110,0.12);
-      border: 1px solid rgba(200,169,110,0.3); color: var(--accent);
-      font-size: 0.8rem; letter-spacing: 0.12em; padding: 6px 18px;
-      border-radius: 999px; margin-bottom: 8px;
-    }
-    .contact-headline {
-      font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 900; color: var(--muted);
-      line-height: 1.5; letter-spacing: 0.06em;
-    }
-    .contact-headline-main {
-      font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; line-height: 1.3;
-      letter-spacing: 0.06em;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent) 100%);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .contact-sub {
-      color: var(--muted); font-size: 1rem; letter-spacing: 0.08em;
-      line-height: 2; margin-top: 8px; margin-bottom: 8px;
-    }
-    .contact-cta-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--accent); color: #0a0a0a; font-weight: 800; font-size: 1.1rem;
-      padding: 16px 48px; border-radius: 999px; text-decoration: none; letter-spacing: 0.08em;
-      box-shadow: 0 4px 32px rgba(200,169,110,0.35);
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s; margin-top: 16px;
-    }
-    .contact-cta-btn:hover { background: var(--accent2); transform: translateY(-3px); box-shadow: 0 8px 40px rgba(200,169,110,0.5); }
-    .contact-note { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 12px; }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 24px; text-align: center; color: var(--muted);
-      font-size: 0.85rem; letter-spacing: 0.06em;
-    }
-    footer span { color: var(--accent); }
-
-    /* 浮動 LINE */
-    .float-line {
-      position: fixed; bottom: 28px; right: 24px; z-index: 200;
-      display: flex; align-items: center; gap: 10px;
-      background: #06C755; color: #fff; font-weight: 700; font-size: 0.9rem;
-      padding: 12px 20px; border-radius: 999px; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(6,199,85,0.4); transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .float-line:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(6,199,85,0.5); }
-    .float-line-icon { font-size: 1.2rem; }
-
-    /* SHINE */
+    /* Hero 標語 */
     .hero-sub-shine {
       font-size: 3.5rem !important; font-weight: 800; line-height: 1.6;
       text-align: center; margin: 0 auto 40px; letter-spacing: 0.08em;
@@ -479,6 +128,207 @@ body::after {
       100% { background-position: -200% center; }
     }
 
+    /* Hero 標語條 */
+    .hero-pills {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin-bottom: 48px;
+    }
+    .hero-pill {
+      font-size: 0.82rem; letter-spacing: 0.16em; color: #aaaaaa;
+      padding: 5px 16px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* Hero Stats */
+    .hero-stats {
+      display: flex; flex-direction: row; gap: 64px;
+      justify-content: center; align-items: flex-start; margin-bottom: 48px;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 2.6rem; font-weight: 900; color: transparent;
+      background: linear-gradient(135deg, #c8a96e 0%, #e0c080 50%, #c8a96e 100%);
+      -webkit-background-clip: text; background-clip: text;
+      letter-spacing: 0.04em; line-height: 1.1;
+    }
+    .stat-label { font-size: 0.82rem; color: #888888; letter-spacing: 0.12em; margin-top: 6px; }
+
+    /* Hero CTA */
+    .hero-cta { display: flex; flex-direction: row; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #c8a96e, #e0c080);
+      color: #0a0a0a; font-weight: 800; font-size: 1rem;
+      padding: 14px 36px; border-radius: 999px;
+      text-decoration: none; letter-spacing: 0.1em;
+      box-shadow: 0 4px 24px rgba(200,169,110,0.3);
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,169,110,0.45); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #aaaaaa; font-weight: 600; font-size: 1rem;
+      padding: 14px 36px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15); text-decoration: none; letter-spacing: 0.08em;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: #ffffff; transform: translateY(-2px); }
+
+    /* SECTION BASE */
+    section { padding: 96px 24px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-label { font-size: 0.85rem; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; text-align: center; display: block; }
+    .section-title { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.25; margin-bottom: 20px; text-align: center; letter-spacing: 0.06em; }
+    .section-desc { color: var(--muted); font-size: 1rem; max-width: 560px; margin-bottom: 56px; text-align: center; line-height: 2; letter-spacing: 0.05em; margin-left: auto; margin-right: auto; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* 全頁透明背景讓流動絲絨透出 */
+    #about    { background: rgba(20,20,20,0.6); backdrop-filter: blur(2px); }
+    #features { background: rgba(10,10,10,0.45); backdrop-filter: blur(2px); }
+    #jobs     { background: rgba(20,20,20,0.6); backdrop-filter: blur(2px); }
+    #faq      { background: rgba(10,10,10,0.45); backdrop-filter: blur(2px); }
+    #blog     { background: rgba(10,10,10,0.45); backdrop-filter: blur(2px); }
+    #contact  { background: rgba(10,10,10,0.45); backdrop-filter: blur(2px); text-align: center; }
+    footer    { background: rgba(14,14,14,0.7); backdrop-filter: blur(2px); }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-text p { color: var(--muted); margin-bottom: 20px; line-height: 2; letter-spacing: 0.05em; }
+    .about-text strong { color: var(--text); }
+    .about-text a { color: var(--accent); text-decoration: underline; }
+    .about-highlights { display: flex; flex-direction: column; gap: 16px; }
+    .highlight-item {
+      background: rgba(26,26,26,0.7); border: 1px solid var(--border);
+      border-left: 2px solid var(--accent); padding: 16px 20px; border-radius: 10px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .highlight-item:hover { background: rgba(30,30,30,0.9); border-left-color: var(--accent2); }
+    .highlight-item h4 { font-size: 0.95rem; margin-bottom: 6px; letter-spacing: 0.05em; color: var(--text); }
+    .highlight-item p { font-size: 0.85rem; color: var(--muted); margin: 0; letter-spacing: 0.04em; }
+
+    /* FEATURES */
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .feature-card {
+      background: rgba(20,20,20,0.7); border: 1px solid var(--border);
+      padding: 32px 24px; border-radius: 14px;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s; text-align: center;
+    }
+    .feature-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-4px); background: rgba(26,26,26,0.85); }
+    .feature-icon { font-size: 1.4rem; margin-bottom: 14px; color: var(--accent); letter-spacing: 0.08em; font-weight: 700; }
+    .feature-card h3 { font-size: 1.05rem; margin-bottom: 10px; letter-spacing: 0.06em; }
+    .feature-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.9; letter-spacing: 0.04em; }
+
+    /* FAQ */
+    .faq-line-banner {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(200,169,110,0.05); border: 1px solid rgba(200,169,110,0.25);
+      border-radius: 14px; padding: 18px 24px; margin-top: 24px;
+      text-decoration: none; color: var(--text); transition: border-color 0.2s, background 0.2s;
+    }
+    .faq-line-banner:hover { border-color: var(--accent); background: rgba(200,169,110,0.08); }
+    .faq-line-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #c8a96e, #e0c080);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 900; color: #0a0a0a; letter-spacing: 0.06em; flex-shrink: 0;
+    }
+    .faq-line-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: 0.05em; }
+    .faq-line-text span { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.04em; }
+    .faq-arrow { margin-left: auto; font-size: 1.2rem; color: var(--accent); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(20,20,20,0.7); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
+    .faq-item.open { border-color: rgba(200,169,110,0.35); }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 24px; font-size: 1rem; font-weight: 700; color: var(--text);
+      cursor: pointer; text-align: left; font-family: 'Noto Sans TC', sans-serif; letter-spacing: 0.05em;
+    }
+    .faq-plus { font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-plus { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; padding: 0 24px; font-size: 0.9rem; color: var(--muted); line-height: 2; letter-spacing: 0.04em; }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 24px 20px; }
+
+    /* BLOG */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .blog-card {
+      background: rgba(20,20,20,0.7); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column;
+    }
+    .blog-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-4px); }
+    .blog-card-cover { width: 100%; height: 160px; background: var(--border); object-fit: cover; }
+    .blog-card-cover-placeholder {
+      width: 100%; height: 160px;
+      background: linear-gradient(135deg, #1a1510, #221e18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+      color: rgba(200,169,110,0.4);
+    }
+    .blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .blog-card-date { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
+    .blog-card-views { font-size: 0.72rem; color: #555; letter-spacing: 0.04em; }
+    .blog-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.04em; line-height: 1.5; }
+    .blog-card-summary { font-size: 0.85rem; color: var(--muted); flex: 1; line-height: 1.9; }
+    .blog-loading { color: var(--muted); text-align: center; padding: 40px; }
+
+    /* JOBS */
+    .jobs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .job-card {
+      background: rgba(20,20,20,0.7); border: 1px solid var(--border); border-radius: 16px;
+      padding: 32px 28px; display: flex; flex-direction: column; gap: 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .job-card:hover { border-color: rgba(200,169,110,0.3); transform: translateY(-6px); }
+    .job-card-header { display: flex; justify-content: space-between; align-items: center; }
+    .job-card-title { font-size: 1.3rem; font-weight: 800; color: var(--text); letter-spacing: 0.06em; }
+    .job-badge { font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.06em; }
+    .badge-pr    { background: rgba(200,169,110,0.1); color: var(--accent); border: 1px solid rgba(200,169,110,0.3); }
+    .badge-agent { background: rgba(240,240,240,0.08); color: #d0d0d0; border: 1px solid rgba(240,240,240,0.2); }
+    .badge-beauty{ background: rgba(240,240,240,0.08); color: #d0d0d0; border: 1px solid rgba(240,240,240,0.2); }
+    .job-card-desc { font-size: 0.9rem; color: var(--muted); line-height: 2; letter-spacing: 0.04em; }
+    .job-card-perks { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .job-card-perks li { display: flex; align-items: center; gap: 10px; font-size: 0.875rem; color: var(--text); letter-spacing: 0.04em; }
+    .job-card-perks li::before { content: '—'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+    /* CONTACT */
+    .contact-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .contact-badge {
+      display: inline-block; background: rgba(200,169,110,0.08);
+      border: 1px solid rgba(200,169,110,0.25); color: var(--accent);
+      font-size: 0.78rem; letter-spacing: 0.16em; padding: 6px 18px;
+      border-radius: 999px; margin-bottom: 8px;
+    }
+    .contact-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #c8a96e, #e0c080);
+      color: #0a0a0a; font-weight: 800; font-size: 1.1rem;
+      padding: 16px 52px; border-radius: 999px; text-decoration: none; letter-spacing: 0.1em;
+      box-shadow: 0 4px 32px rgba(200,169,110,0.3);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s; margin-top: 16px;
+    }
+    .contact-cta-btn:hover { background: linear-gradient(135deg, #e0c080, #c8a96e); transform: translateY(-3px); box-shadow: 0 8px 40px rgba(200,169,110,0.45); }
+    .contact-note { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 12px; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; color: var(--muted); font-size: 0.85rem; letter-spacing: 0.06em; }
+    footer span { color: var(--accent); }
+
+    /* 浮動 LINE */
+    .float-line {
+      position: fixed; bottom: 28px; right: 24px; z-index: 200;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #06C755; color: #fff; font-weight: 700; font-size: 0.88rem;
+      padding: 11px 22px; border-radius: 999px; text-decoration: none;
+      letter-spacing: 0.08em;
+      box-shadow: 0 4px 20px rgba(6,199,85,0.35), 0 0 0 1px rgba(6,199,85,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .float-line:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(6,199,85,0.5); }
+    .float-line-dot { width: 7px; height: 7px; background: #fff; border-radius: 50%; opacity: 0.85; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) { .jobs-grid { grid-template-columns: 1fr; } }
     @media (max-width: 640px) {
@@ -489,38 +339,16 @@ body::after {
       .hero-stats { gap: 36px; }
       .stat-num { font-size: 2rem; }
       .features-grid { grid-template-columns: 1fr; }
-      .float-line { bottom: 24px; right: 16px; }
-      .nav-btn-guide { font-size: 0.8rem; padding: 7px 12px; }
-      .btn-primary, .btn-outline { padding: 13px 28px; font-size: 0.95rem; }
-    }
-
-        /* CONTACT EYEBROW */
-    .contact-eyebrow {
-      font-size: clamp(0.85rem, 2vw, 1rem);
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      color: #c9a84c;
-      opacity: 0.75;
-      margin-bottom: 4px;
-    }
-
-    .contact-divider {
-      width: 48px;
-      height: 2px;
-      background: linear-gradient(90deg, #c9a84c, transparent);
-      margin: 8px auto;
-      border-radius: 2px;
+      .float-line { bottom: 20px; right: 16px; font-size: 0.82rem; padding: 10px 18px; }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <canvas id="velvet-bg"></canvas>
 
-
 <!-- 浮動 LINE 按鈕 -->
 <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="float-line">
-  <span class="float-line-icon">💬</span>
+  <span class="float-line-dot"></span>
   <span>立即加 LINE</span>
 </a>
 
@@ -555,13 +383,23 @@ body::after {
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-badge">八大最誠實經紀</div>
+  <div class="hero-badges">
+    <span class="hero-badge hero-badge-hot">最多人詢問經紀</span>
+    <span class="hero-badge">八大最誠實經紀</span>
+    <span class="hero-badge">七年從業經驗</span>
+    <span class="hero-badge">完全免費諮詢</span>
+  </div>
   <p class="hero-sub-shine">
     <span>不</span><span>要</span><span>讓</span><span>未</span><span>來</span><span>的</span><span>你</span>
     <br/>
     <span>討</span><span>厭</span><span>現</span><span>在</span><span>的</span><span>自</span><span>己</span>
   </p>
-  <p class="hero-sub">不簽合約　不壓薪水　自由排班　隱私安全</p>
+  <div class="hero-pills">
+    <span class="hero-pill">不簽合約</span>
+    <span class="hero-pill">不壓薪水</span>
+    <span class="hero-pill">自由排班</span>
+    <span class="hero-pill">隱私安全</span>
+  </div>
   <div class="hero-stats">
     <div class="stat">
       <div class="stat-num" id="counter-years">0</div>
@@ -585,7 +423,7 @@ body::after {
   <div class="container">
     <div class="about-grid">
       <div class="about-text">
-        <p class="section-label" style="font-size:1.8rem; font-weight:800; color: var(--accent);">關於我</p>
+        <p class="section-label" style="font-size:1.8rem; font-weight:800; color: var(--accent); text-align:left;">關於我</p>
         <h2 style="text-align:left; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; line-height:1.4; margin-bottom:20px; letter-spacing:0.06em;">大頭<br/>八大最誠實經紀人</h2>
         <p>在八大行業　<strong>誠實是最稀缺的東西</strong></p>
         <p>我從業七年　個人面試超過 3000 位女孩<br/>見過太多人因為資訊不透明而受傷</p>
@@ -593,12 +431,12 @@ body::after {
         <p>想找我可以 <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank">直接點擊這邊 LINE 詢問</a></p>
       </div>
       <div class="about-highlights">
-        <div class="highlight-item"><h4>✅ 完全透明</h4><p>薪資　環境　工作內容全程說清楚　沒有隱藏資訊</p></div>
-        <div class="highlight-item"><h4>📃 不簽合約</h4><p>不靠簽約綁住人　只靠真誠留住你</p></div>
-        <div class="highlight-item"><h4>💰 不壓薪水</h4><p>每週固定時間發薪　想現領也可以</p></div>
-        <div class="highlight-item"><h4>🔒 隱私保護</h4><p>個人資料嚴格保密　不必告知家人　男友　朋友</p></div>
-        <div class="highlight-item"><h4>💬 真人陪伴</h4><p>不是 AI 機器人　有問題隨時找我　我都在</p></div>
-        <div class="highlight-item"><h4>🎯 專業引導</h4><p>七年經驗帶你少走彎路　找到最適合你的方向</p></div>
+        <div class="highlight-item"><h4>完全透明</h4><p>薪資　環境　工作內容全程說清楚　沒有隱藏資訊</p></div>
+        <div class="highlight-item"><h4>不簽合約</h4><p>不靠簽約綁住人　只靠真誠留住你</p></div>
+        <div class="highlight-item"><h4>不壓薪水</h4><p>每週固定時間發薪　想現領也可以</p></div>
+        <div class="highlight-item"><h4>隱私保護</h4><p>個人資料嚴格保密　不必告知家人　男友　朋友</p></div>
+        <div class="highlight-item"><h4>真人陪伴</h4><p>不是 AI 機器人　有問題隨時找我　我都在</p></div>
+        <div class="highlight-item"><h4>專業引導</h4><p>七年經驗帶你少走彎路　找到最適合你的方向</p></div>
       </div>
     </div>
   </div>
@@ -611,26 +449,26 @@ body::after {
   <div class="container">
     <p class="section-label" style="font-size:1.8rem; font-weight:800; color: var(--accent);">選我的優勢</p>
     <h2 class="section-title">業界最誠實的承諾</h2>
-    <p class="section-desc">不誇大　不隱瞞 只講實話<br/>這是我七年來唯一的做事方式</p>
+    <p class="section-desc">不誇大　不隱瞞　只講實話<br/>這是我七年來唯一的做事方式</p>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">💰</div>
-        <h3>薪資透明</h3>
+        <div class="feature-icon">薪資透明</div>
+        <h3>入場前說清楚</h3>
         <p>入行前完整說明計算方式<br/>不會有隱藏費用或事後扣款</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <h3>安全第一</h3>
+        <div class="feature-icon">安全第一</div>
+        <h3>你的底線你決定</h3>
         <p>工作環境事先評估<br/>任何超出範圍的要求都可以直接拒絕</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⏰</div>
-        <h3>時間彈性</h3>
+        <div class="feature-icon">時間彈性</div>
+        <h3>配合你的行程</h3>
         <p>可短期　兼職或配合自己的行程<br/>不強制綁定任何合約</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🤝</div>
-        <h3>一對一服務</h3>
+        <div class="feature-icon">一對一服務</div>
+        <h3>量身規劃方向</h3>
         <p>每個人的情況都不同<br/>我會根據你的狀況給出最適合的建議</p>
       </div>
     </div>
@@ -688,15 +526,8 @@ body::after {
     </div>
   </div>
   <div style="text-align:center; margin-top:40px;">
-      <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" style="
-        display:inline-block;
-        background: linear-gradient(135deg, #c8a96e, #e0c080);
-        color:#0a0a0a; font-weight:800; font-size:1.1rem;
-        padding:16px 56px; border-radius:999px;
-        text-decoration:none; letter-spacing:0.08em;
-        box-shadow: 0 4px 24px rgba(200,169,110,0.35);
-      ">💬　加 LINE 詢問職缺</a>
-    </div>
+    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="btn-primary" style="font-size:1.05rem; padding:15px 52px;">加 LINE 詢問職缺</a>
+  </div>
 </section>
 
 <hr class="divider"/>
@@ -707,110 +538,78 @@ body::after {
     <p class="section-label" style="font-size:1.8rem; font-weight:800; color: var(--accent);">常見問題</p>
     <h2 class="section-title">你可能想問的事</h2>
     <p class="section-desc">有任何問題都可以直接問我<br/>這裡先回答最常見的幾個</p>
-   <div class="faq-list">
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>需要簽合約嗎？</span><span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">完全不需要　我不靠合約綁住任何人　<br>想來就來　想走就走　<br>沒有任何違約金或限制</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>家人男友朋友會知道嗎？</span><span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">不會　個人資料嚴格保密　工作地點　薪資　<br>一切資訊都不會外流　<br>這是我對每一位女孩的承諾</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>沒有經驗可以做嗎？</span><span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">完全可以　我會從頭帶你了解整個流程　<br>新人反而更好　因為沒有壞習慣需要改正</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>酒店薪水怎麼計算？</span><span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">以節計算　每 10 分鐘一節　<br>台北禮服店節薪約 230 到 290 元　<br>詳細數字依店家不同　<br>我會在面試前完整說明　不會有任何隱藏費用</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>可以只做短期嗎？</span><span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">可以　很多人只做幾個月應急　完全沒問題　<br>時間　天數都可以自己安排　<br>沒有最低上班要求</div>
-  </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>需要簽合約嗎？</span><span class="faq-plus">+</span></button>
+        <div class="faq-answer">完全不需要　我不靠合約綁住任何人　<br>想來就來　想走就走　<br>沒有任何違約金或限制</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>家人男友朋友會知道嗎？</span><span class="faq-plus">+</span></button>
+        <div class="faq-answer">不會　個人資料嚴格保密　工作地點　薪資　<br>一切資訊都不會外流　<br>這是我對每一位女孩的承諾</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>沒有經驗可以做嗎？</span><span class="faq-plus">+</span></button>
+        <div class="faq-answer">完全可以　我會從頭帶你了解整個流程　<br>新人反而更好　因為沒有壞習慣需要改正</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>酒店薪水怎麼計算？</span><span class="faq-plus">+</span></button>
+        <div class="faq-answer">以節計算　每 10 分鐘一節　<br>台北禮服店節薪約 230 到 290 元　<br>詳細數字依店家不同　<br>我會在面試前完整說明　不會有任何隱藏費用</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>可以只做短期嗎？</span><span class="faq-plus">+</span></button>
+        <div class="faq-answer">可以　很多人只做幾個月應急　完全沒問題　<br>時間　天數都可以自己安排　<br>沒有最低上班要求</div>
+      </div>
 
-  <!-- 隱藏的 4 題 -->
-  <div id="faq-more" style="display:none; flex-direction:column; gap:12px;">
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>工作會不會被強迫做不想做的事？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">不會　任何超出範圍的要求你都可以直接拒絕　<br>這是你的底線　沒有人可以強迫你</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>試做後覺得不適合 可以離開嗎？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">當然可以　想來就來　想走就走　<br>沒有違約金也沒有任何限制</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>酒店一定要喝酒嗎？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">在酒店上班一定會喝到酒的 <br>但喝不下可以直接跟客人說喝不下了　<br>客人最多把你換掉　他真的喜歡你也會留下你</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>我只是想了解　不想做可以嗎？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">完全沒問題　問了不代表一定要來做　<br>我不會強迫任何人　<br>讓你在完全了解後自己做決定</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>白天有工作、學生想兼職或跟家人同住有門禁怎麼辦？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">不用擔心 我配合的店家有各種類型形態 <br>有午場也有晚場 <br>不管是要正職或兼職時間都是能彈性安排的</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>男朋友或家人怎麼隱瞞？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">這個問題私訊我 我怕別人看到 <br>但我有方法幫你解決</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>有規定一週或一個月要上幾天班嗎？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">我這邊沒有規定 能夠上班就來上 <br>那如果真的沒辦法上很多天 <br>只想一個月上2-3天賺點零用錢 都可以的</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span>上班要穿什麼? 我不會打扮怎麼辦？</span><span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer">都是以禮服高跟鞋為主 <br>我會幫你準備新的一套送給你 <br>髮妝也有專門的髮妝師幫你處理</div>
-    </div>
-  </div>
+      <!-- 隱藏的題 -->
+      <div id="faq-more" style="display:none; flex-direction:column; gap:12px;">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>工作會不會被強迫做不想做的事？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">不會　任何超出範圍的要求你都可以直接拒絕　<br>這是你的底線　沒有人可以強迫你</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>試做後覺得不適合　可以離開嗎？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">當然可以　想來就來　想走就走　<br>沒有違約金也沒有任何限制</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>酒店一定要喝酒嗎？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">在酒店上班一定會喝到酒的　<br>但喝不下可以直接跟客人說喝不下了　<br>客人最多把你換掉　他真的喜歡你也會留下你</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>我只是想了解　不想做可以嗎？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">完全沒問題　問了不代表一定要來做　<br>我不會強迫任何人　<br>讓你在完全了解後自己做決定</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>白天有工作或有門禁怎麼辦？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">不用擔心　我配合的店家有各種類型<br>有午場也有晚場<br>不管是正職或兼職時間都能彈性安排</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>男朋友或家人怎麼隱瞞？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">這個問題私訊我　我怕別人看到<br>但我有方法幫你解決</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>有規定一週要上幾天班嗎？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">我這邊沒有規定　能上班就來上<br>只想一個月上 2 到 3 天賺零用錢　都可以</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)"><span>上班要穿什麼？我不會打扮怎麼辦？</span><span class="faq-plus">+</span></button>
+          <div class="faq-answer">都是以禮服高跟鞋為主<br>我會幫你準備新的一套送給你<br>髮妝也有專門的髮妝師幫你處理</div>
+        </div>
+      </div>
 
-  <!-- 觀看更多按鈕 -->
-  <div style="text-align:center; margin-top:16px;">
-    <button id="faq-toggle-btn" onclick="toggleMoreFaq()" style="
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 10px 28px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      font-family: 'Noto Sans TC', sans-serif;
-      letter-spacing: 0.08em;
-      transition: background 0.2s, color 0.2s;
-    ">觀看更多問題 ↓</button>
-  </div>
-</div>
+      <!-- 觀看更多按鈕 -->
+      <div style="text-align:center; margin-top:16px;">
+        <button id="faq-toggle-btn" onclick="toggleMoreFaq()" style="
+          background: transparent; border: 1px solid rgba(200,169,110,0.4);
+          color: var(--accent); padding: 10px 28px; border-radius: 999px;
+          font-size: 0.88rem; cursor: pointer; font-family: 'Noto Sans TC', sans-serif;
+          letter-spacing: 0.1em; transition: background 0.2s, border-color 0.2s;
+        ">觀看更多問題 ↓</button>
+      </div>
+    </div>
     <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="faq-line-banner">
-      <div class="faq-line-icon">💬</div>
+      <div class="faq-line-icon">LINE</div>
       <div class="faq-line-text">
-        <strong>還有其他問題　<br> 直接加我 LINE</strong>
+        <strong>還有其他問題　直接加我 LINE</strong>
         <span>我會親自回覆　不是機器人</span>
       </div>
       <div class="faq-arrow">→</div>
@@ -838,48 +637,12 @@ body::after {
 <section id="contact">
   <div class="container">
     <div class="contact-inner">
-
-      <div class="contact-badge">⚡ 隨時都在線上</div>
-
-      <p style="font-size:0.9rem; letter-spacing:0.3em; color:#666; text-transform:uppercase; margin-bottom:4px;">Free Consultation</p>
-
-      <h2 style="
-        font-size: clamp(1rem, 2.5vw, 1.3rem);
-        font-weight: 400;
-        color: #888;
-        letter-spacing: 0.15em;
-        line-height: 2;
-        text-align: center;
-        margin-bottom: 0;
-      ">問了　不代表一定要來做</h2>
-
-      <h2 style="
-        font-size: clamp(2.4rem, 6vw, 4.2rem);
-        font-weight: 900;
-        line-height: 1.2;
-        letter-spacing: 0.04em;
-        text-align: center;
-        background: linear-gradient(135deg, #c8a96e 0%, #f0d898 45%, #c8a96e 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        margin: 8px 0 4px;
-      ">但不問我<br/>你永遠不知道</h2>
-
-      <h2 style="
-        font-size: clamp(0.95rem, 2vw, 1.1rem);
-        font-weight: 400;
-        color: #666;
-        letter-spacing: 0.15em;
-        line-height: 2;
-        text-align: center;
-        margin-bottom: 32px;
-      ">八大行業　到底長什麼樣子</h2>
-
-      <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="contact-cta-btn">
-        💬　點我免費諮詢
-      </a>
-
+      <div class="contact-badge">隨時在線上</div>
+      <p style="font-size:0.9rem; letter-spacing:0.3em; color:#555; text-transform:uppercase; margin-bottom:4px;">Free Consultation</p>
+      <h2 style="font-size:clamp(1rem,2.5vw,1.3rem); font-weight:400; color:#777; letter-spacing:0.15em; line-height:2; text-align:center; margin-bottom:0;">問了　不代表一定要來做</h2>
+      <h2 style="font-size:clamp(2.4rem,6vw,4.2rem); font-weight:900; line-height:1.2; letter-spacing:0.04em; text-align:center; background:linear-gradient(135deg,#c8a96e 0%,#f0d898 45%,#c8a96e 100%); -webkit-background-clip:text; background-clip:text; color:transparent; margin:8px 0 4px;">但不問我<br/>你永遠不知道</h2>
+      <h2 style="font-size:clamp(0.95rem,2vw,1.1rem); font-weight:400; color:#555; letter-spacing:0.15em; line-height:2; text-align:center; margin-bottom:32px;">八大行業　到底長什麼樣子</h2>
+      <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="contact-cta-btn">點我免費諮詢</a>
       <p class="contact-note">我會親自回覆　不是 AI 機器人　完全免費</p>
     </div>
   </div>
@@ -890,6 +653,9 @@ body::after {
 <!-- FOOTER -->
 <footer>
   <p>© 2026 <span>AS娛樂</span>　八大最誠實經紀 大頭</p>
+  <p style="margin-top:10px; font-size:0.78rem; color:#444; letter-spacing:0.08em;">
+    本站累計瀏覽　<span id="total-views" style="color:var(--accent); font-weight:700;">0</span>　次
+  </p>
 </footer>
 
 <script>
@@ -944,39 +710,65 @@ body::after {
   }, { threshold: 0.3 });
   observer.observe(heroSection);
 
-  async function loadBlog() {
-  const grid = document.getElementById('blog-grid');
-  try {
-    const res = await fetch('https://polished-truth-9fc2.angus061855.workers.dev/posts');
-    const posts = await res.json();
-    if (!posts.length) {
-      grid.innerHTML = '<p class="blog-loading">目前還沒有文章　敬請期待</p>';
-      return;
-    }
-    const shown = posts.slice(0, 3);
-    grid.innerHTML = shown.map(post => `
-      <a class="blog-card" href="/post.html?slug=${post.slug}">
-        ${post.cover
-          ? `<img class="blog-card-cover" src="${post.cover}" alt="${post.title}"/>`
-          : `<div class="blog-card-cover-placeholder">✍️</div>`}
-        <div class="blog-card-body">
-          <div class="blog-card-date">${post.date}</div>
-          <div class="blog-card-title">${post.title}</div>
-          <div class="blog-card-summary">${post.summary || ''}</div>
-        </div>
-      </a>
-    `).join('');
-    if (posts.length > 3) {
-      grid.insertAdjacentHTML('afterend', `
-        <div style="text-align:center;margin-top:32px;">
-          <a href="/blog.html" style="color:var(--accent);border:1px solid var(--accent);padding:12px 32px;border-radius:999px;text-decoration:none;font-size:0.95rem;letter-spacing:0.08em;">觀看更多文章 →</a>
-        </div>
-      `);
-    }
-  } catch(e) {
-    grid.innerHTML = '<p class="blog-loading">文章載入失敗　請稍後再試</p>';
+  // 假瀏覽數：slug+日期固定計算
+  function getBaseViews(slug) {
+    let hash = 0;
+    for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) & 0xffffffff;
+    return 1235 + (Math.abs(hash) % (4257 - 1235 + 1));
   }
-}
+  function getDailyAdd(slug, days) {
+    let total = 0;
+    for (let i = 0; i < days; i++) {
+      let seed = 0;
+      const s = slug + i;
+      for (let j = 0; j < s.length; j++) seed = (seed * 31 + s.charCodeAt(j)) & 0xffffffff;
+      total += 543 + (Math.abs(seed) % 701);
+    }
+    return total;
+  }
+  function calcViews(slug, publishDate) {
+    const pub = new Date(publishDate);
+    const today = new Date();
+    const days = Math.max(0, Math.floor((today - pub) / (1000 * 60 * 60 * 24)));
+    return (getBaseViews(slug) + getDailyAdd(slug, days)).toLocaleString();
+  }
+
+  async function loadBlog() {
+    const grid = document.getElementById('blog-grid');
+    try {
+      const res = await fetch('https://polished-truth-9fc2.angus061855.workers.dev/posts');
+      const posts = await res.json();
+      if (!posts.length) {
+        grid.innerHTML = '<p class="blog-loading">目前還沒有文章　敬請期待</p>';
+        return;
+      }
+      const shown = posts.slice(0, 3);
+      grid.innerHTML = shown.map(post => `
+        <a class="blog-card" href="/post.html?slug=${post.slug}">
+          ${post.cover
+            ? `<img class="blog-card-cover" src="${post.cover}" alt="${post.title}"/>`
+            : `<div class="blog-card-cover-placeholder">AS 娛樂</div>`}
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <div class="blog-card-date">${post.date}</div>
+              <div class="blog-card-views">${calcViews(post.slug, post.date)} 次瀏覽</div>
+            </div>
+            <div class="blog-card-title">${post.title}</div>
+            <div class="blog-card-summary">${post.summary || ''}</div>
+          </div>
+        </a>
+      `).join('');
+      if (posts.length > 3) {
+        grid.insertAdjacentHTML('afterend', `
+          <div style="text-align:center;margin-top:32px;">
+            <a href="/blog.html" style="color:var(--accent);border:1px solid rgba(200,169,110,0.4);padding:12px 32px;border-radius:999px;text-decoration:none;font-size:0.92rem;letter-spacing:0.1em;">觀看更多文章 →</a>
+          </div>
+        `);
+      }
+    } catch(e) {
+      grid.innerHTML = '<p class="blog-loading">文章載入失敗　請稍後再試</p>';
+    }
+  }
   loadBlog();
 
   function toggleFaq(btn) {
@@ -986,167 +778,99 @@ body::after {
     if (!isOpen) item.classList.add('open');
   }
 
-  function switchGuide(pageId, btn) {
-    document.querySelectorAll('.guide-page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-btn-guide').forEach(b => b.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-    btn.classList.add('active');
-    if (pageId === 'g-page-danger') {
-      document.body.classList.add('danger-zone');
+  function toggleMoreFaq() {
+    const more = document.getElementById('faq-more');
+    const btn = document.getElementById('faq-toggle-btn');
+    if (more.style.display === 'none') {
+      more.style.display = 'flex';
+      btn.textContent = '收起 ↑';
     } else {
-      document.body.classList.remove('danger-zone');
+      more.style.display = 'none';
+      btn.textContent = '觀看更多問題 ↓';
     }
   }
 
-  function toggleGuideCard(event, card) {
-    if (event.target.closest('.scratch-container-guide')) return;
-    card.classList.toggle('open');
+  // 總瀏覽數
+  function calcTotalViews() {
+    const startDate = new Date('2026-03-01');
+    const startCount = 28547;
+    const today = new Date();
+    const days = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+    let total = startCount;
+    for (let i = 0; i < days; i++) {
+      const seed = i * 7919 + 3571;
+      total += 543 + (seed % 701);
+    }
+    document.getElementById('total-views').textContent = total.toLocaleString();
   }
+  calcTotalViews();
 
-  function scratchGuide(event, container) {
-    event.stopPropagation();
-    container.classList.add('revealed');
-  }
-(function() {
-  const canvas = document.getElementById('velvet-bg');
-  const ctx = canvas.getContext('2d');
-
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.width = '100%';
-  canvas.style.height = '100%';
-  canvas.style.zIndex = '-1';
-  canvas.style.pointerEvents = 'none';
-
-  let W, H;
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  let t = 0;
-
-  // 布料光澤控制點：模擬圖片中那條從左上到右下的亮帶
-  const folds = [
-    { x: 0.15, y: 0.10, tx: 0.75, ty: 0.55, speed: 0.00002, phase: 0.0  },
-    { x: 0.05, y: 0.40, tx: 0.60, ty: 0.90, speed: 0.00002, phase: 1.2  },
-    { x: 0.30, y: 0.00, tx: 0.95, ty: 0.70, speed: 0.00002, phase: 2.4  },
-  ];
-
-  function drawFold(fold, time) {
-    const drift = Math.sin(time * fold.speed * 1000 + fold.phase) * 0.06;
-    const x1 = (fold.x + drift)  * W;
-    const y1 = (fold.y + drift * 0.5) * H;
-    const x2 = (fold.tx - drift) * W;
-    const y2 = (fold.ty - drift * 0.3) * H;
-
-    // 垂直於光帶方向的寬度
-    const len = Math.hypot(x2 - x1, y2 - y1);
-    const nx  = -(y2 - y1) / len;
-    const ny  =  (x2 - x1) / len;
-    const w   = Math.max(W, H) * (0.28 + Math.sin(time * fold.speed * 800 + fold.phase) * 0.04);
-
-    const gx1 = x1 + nx * w;
-    const gy1 = y1 + ny * w;
-    const gx2 = x1 - nx * w;
-    const gy2 = y1 - ny * w;
-
-    const grad = ctx.createLinearGradient(gx1, gy1, gx2, gy2);
-    grad.addColorStop(0,    'rgba(0,0,0,0)');
-    grad.addColorStop(0.35, 'rgba(0,0,0,0)');
-    grad.addColorStop(0.48, 'rgba(72,70,68,0.08)');
-    grad.addColorStop(0.50, 'rgba(95,92,88,0.13)');
-    grad.addColorStop(0.52, 'rgba(72,70,68,0.08)');
-    grad.addColorStop(0.65, 'rgba(0,0,0,0)');
-    grad.addColorStop(1,    'rgba(0,0,0,0)');
-
-    ctx.save();
-    ctx.beginPath();
-    // 沿光帶方向畫一個長矩形遮罩
-    const ex = (x2 - x1) / len;
-    const ey = (y2 - y1) / len;
-    const ext = Math.max(W, H) * 2.0;
-    ctx.moveTo(x1 - ex * ext + nx * w, y1 - ey * ext + ny * w);
-    ctx.lineTo(x2 + ex * ext + nx * w, y2 + ey * ext + ny * w);
-    ctx.lineTo(x2 + ex * ext - nx * w, y2 + ey * ext - ny * w);
-    ctx.lineTo(x1 - ex * ext - nx * w, y1 - ey * ext - ny * w);
-    ctx.closePath();
-    ctx.fillStyle = grad;
-    ctx.fill();
-    ctx.restore();
-  }
-
-  // 圓形凸起光澤（模擬圖片中間那個鼓起的部分）
-  const bumps = [
-    { x: 0.55, y: 0.35, r: 0.42, speed: 0.000002, phase: 0.0  },
-    { x: 0.25, y: 0.65, r: 0.35, speed: 0.000002, phase: 1.8  },
-    { x: 0.75, y: 0.75, r: 0.30, speed: 0.000002, phase: 3.2  },
-  ];
-
-  function drawBump(bump, time) {
-    const drift = Math.sin(time * bump.speed * 1000 + bump.phase);
-    const cx = (bump.x + drift * 0.07) * W;
-    const cy = (bump.y + Math.cos(time * bump.speed * 800 + bump.phase) * 0.06) * H;
-    const r  = bump.r * Math.max(W, H);
-
-    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-    grad.addColorStop(0,    'rgba(88, 85, 80, 0.20)');
-    grad.addColorStop(0.25, 'rgba(65, 62, 58, 0.14)');
-    grad.addColorStop(0.55, 'rgba(30, 28, 26, 0.07)');
-    grad.addColorStop(1,    'rgba(0,  0,  0,  0)');
-
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
-  }
-
-  function draw() {
-    t++;
-
-    // 純黑底
-    ctx.fillStyle = '#060606';
-    ctx.fillRect(0, 0, W, H);
-
-    // 畫布料凸起光澤
-    bumps.forEach(b => drawBump(b, t));
-
-    // 畫布料折痕光帶
-    folds.forEach(f => drawFold(f, t));
-
-    // 整體暗角壓邊
-    const vignette = ctx.createRadialGradient(
-      W * 0.5, H * 0.45, 0,
-      W * 0.5, H * 0.45, Math.max(W, H) * 0.78
-    );
-    vignette.addColorStop(0,    'rgba(0,0,0,0)');
-    vignette.addColorStop(0.55, 'rgba(0,0,0,0.18)');
-    vignette.addColorStop(0.80, 'rgba(0,0,0,0.55)');
-    vignette.addColorStop(1,    'rgba(0,0,0,0.85)');
-    ctx.fillStyle = vignette;
-    ctx.fillRect(0, 0, W, H);
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-})();
-
-function toggleMoreFaq() {
-  const more = document.getElementById('faq-more');
-  const btn = document.getElementById('faq-toggle-btn');
-  if (more.style.display === 'none') {
-    more.style.display = 'flex';
-    btn.textContent = '收起 ↑';
-  } else {
-    more.style.display = 'none';
-    btn.textContent = '觀看更多問題 ↓';
-  }
-}
-
+  // 流動絲絨背景
+  (function() {
+    const canvas = document.getElementById('velvet-bg');
+    const ctx = canvas.getContext('2d');
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0'; canvas.style.left = '0';
+    canvas.style.width = '100%'; canvas.style.height = '100%';
+    canvas.style.zIndex = '-1'; canvas.style.pointerEvents = 'none';
+    let W, H;
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+    let t = 0;
+    const folds = [
+      { x: 0.15, y: 0.10, tx: 0.75, ty: 0.55, speed: 0.00002, phase: 0.0 },
+      { x: 0.05, y: 0.40, tx: 0.60, ty: 0.90, speed: 0.00002, phase: 1.2 },
+      { x: 0.30, y: 0.00, tx: 0.95, ty: 0.70, speed: 0.00002, phase: 2.4 },
+    ];
+    function drawFold(fold, time) {
+      const drift = Math.sin(time * fold.speed * 1000 + fold.phase) * 0.06;
+      const x1 = (fold.x + drift) * W, y1 = (fold.y + drift * 0.5) * H;
+      const x2 = (fold.tx - drift) * W, y2 = (fold.ty - drift * 0.3) * H;
+      const len = Math.hypot(x2 - x1, y2 - y1);
+      const nx = -(y2 - y1) / len, ny = (x2 - x1) / len;
+      const w = Math.max(W, H) * (0.28 + Math.sin(time * fold.speed * 800 + fold.phase) * 0.04);
+      const grad = ctx.createLinearGradient(x1 + nx * w, y1 + ny * w, x1 - nx * w, y1 - ny * w);
+      grad.addColorStop(0, 'rgba(0,0,0,0)'); grad.addColorStop(0.35, 'rgba(0,0,0,0)');
+      grad.addColorStop(0.48, 'rgba(72,70,68,0.08)'); grad.addColorStop(0.50, 'rgba(95,92,88,0.13)');
+      grad.addColorStop(0.52, 'rgba(72,70,68,0.08)'); grad.addColorStop(0.65, 'rgba(0,0,0,0)');
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.save(); ctx.beginPath();
+      const ex = (x2 - x1) / len, ey = (y2 - y1) / len, ext = Math.max(W, H) * 2.0;
+      ctx.moveTo(x1 - ex * ext + nx * w, y1 - ey * ext + ny * w);
+      ctx.lineTo(x2 + ex * ext + nx * w, y2 + ey * ext + ny * w);
+      ctx.lineTo(x2 + ex * ext - nx * w, y2 + ey * ext - ny * w);
+      ctx.lineTo(x1 - ex * ext - nx * w, y1 - ey * ext - ny * w);
+      ctx.closePath(); ctx.fillStyle = grad; ctx.fill(); ctx.restore();
+    }
+    const bumps = [
+      { x: 0.55, y: 0.35, r: 0.42, speed: 0.000002, phase: 0.0 },
+      { x: 0.25, y: 0.65, r: 0.35, speed: 0.000002, phase: 1.8 },
+      { x: 0.75, y: 0.75, r: 0.30, speed: 0.000002, phase: 3.2 },
+    ];
+    function drawBump(bump, time) {
+      const drift = Math.sin(time * bump.speed * 1000 + bump.phase);
+      const cx = (bump.x + drift * 0.07) * W;
+      const cy = (bump.y + Math.cos(time * bump.speed * 800 + bump.phase) * 0.06) * H;
+      const r = bump.r * Math.max(W, H);
+      const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+      grad.addColorStop(0, 'rgba(88,85,80,0.20)'); grad.addColorStop(0.25, 'rgba(65,62,58,0.14)');
+      grad.addColorStop(0.55, 'rgba(30,28,26,0.07)'); grad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+    }
+    function draw() {
+      t++;
+      ctx.fillStyle = '#060606'; ctx.fillRect(0, 0, W, H);
+      bumps.forEach(b => drawBump(b, t));
+      folds.forEach(f => drawFold(f, t));
+      const vignette = ctx.createRadialGradient(W*0.5, H*0.45, 0, W*0.5, H*0.45, Math.max(W,H)*0.78);
+      vignette.addColorStop(0, 'rgba(0,0,0,0)'); vignette.addColorStop(0.55, 'rgba(0,0,0,0.18)');
+      vignette.addColorStop(0.80, 'rgba(0,0,0,0.55)'); vignette.addColorStop(1, 'rgba(0,0,0,0.85)');
+      ctx.fillStyle = vignette; ctx.fillRect(0, 0, W, H);
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
 </script>
-
 </body>
 </html>
-
