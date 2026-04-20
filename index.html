@@ -301,19 +301,17 @@
     }
     .blog-card-cover { width: 100%; height: 160px; object-fit: cover; }
     .blog-card-cover-placeholder {
-      width: 100%; height: 160px;
-      background: linear-gradient(135deg, #181208, #1e1810, #181208);
-      background-size: 200% 200%;
-      animation: shimmerBg 6s ease infinite;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .blog-card-cover-placeholder {
   width: 100%; height: 160px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  background-size: 200% 200%;
+  background: rgba(255,255,255,0.03);
   animation: shimmerBg 6s ease infinite;
+  background-size: 200% 200%;
   display: flex; align-items: center; justify-content: center;
+}
+.blog-card-cover-placeholder::after {
+  content: '';
+  width: 120px; height: 120px;
+  background: url('/LOGO 白色.png') center/contain no-repeat;
+  opacity: 0.5;
 }
 .blog-card-cover-placeholder::after {
   content: '';
