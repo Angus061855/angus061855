@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>部落格｜AS娛樂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg: #0a0a0a; --border: #2a2a2a; --text: #f0f0f0; --muted: #888; --accent: #c8a96e; }
+    body { background: var(--bg); color: var(--text); font-family: 'Noto Sans TC', sans-serif; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 40px; background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+    .back-btn { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    .back-btn:hover { color: var(--accent); }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 40px; text-align: center; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .blog-card {
+      background: rgba(26,26,26,0.8); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden; text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column;
+    }
+    .blog-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .blog-card-cover-placeholder {
+      width: 100%; height: 160px;
+      background: linear-gradient(135deg, #1e1a12, #2a2520);
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    }
+    .blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; }
+    .blog-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .blog-card-summary { font-size: 0.85rem; color: var(--muted); flex: 1; line-height: 1.9; }
+    .blog-loading { color: var(--muted); text-align: center; padding: 40px; }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer span { color: var(--accent); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">AS娛樂</a>
+  <a href="index.html#blog" class="back-btn">← 返回首頁</a>
+</nav>
+<div class="wrap">
+  <h1>所有文章</h1>
+  <div class="blog-grid" id="blog-grid">
+    <p class="blog-loading">載入中...</p>
+  </div>
+</div>
+<footer><p>© 2026 <span>AS娛樂</span>　八大最誠實經紀 大頭</p></footer>
+<script>
+  async function loadBlog() {
+    const grid = document.getElementById('blog-grid');
+    try {
+      const res = await fetch('https://polished-truth-9fc2.angus061855.workers.dev/posts');
+      const posts = await res.json();
+      if (!posts.length) { grid.innerHTML = '<p class="blog-loading">目前還沒有文章</p>'; return; }
+      grid.innerHTML = posts.map(post => `
+        <a class="blog-card" href="/post.html?slug=${post.slug}">
+          <div class="blog-card-cover-placeholder">✍️</div>
+          <div class="blog-card-body">
+            <div class="blog-card-date">${post.date}</div>
+            <div class="blog-card-title">${post.title}</div>
+            <div class="blog-card-summary">${post.summary || ''}</div>
+          </div>
+        </a>
+      `).join('');
+    } catch(e) {
+      grid.innerHTML = '<p class="blog-loading">載入失敗　請稍後再試</p>';
+    }
+  }
+  loadBlog();
+</script>
+</body>
+</html>
