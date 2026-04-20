@@ -4,10 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>部落格｜AS娛樂</title>
+  <meta name="description" content="AS娛樂大頭的部落格，七年八大行業經驗，分享最真實的酒店公關入行知識。"/>
+  <link rel="canonical" href="https://as-ent-tw.com/blog.html"/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --bg: #0a0a0a; --border: #2a2a2a; --text: #f0f0f0; --muted: #888; --accent: #c8a96e; }
+    :root { --bg: #0a0a0a; --border: #2a2a2a; --text: #f0f0f0; --muted: #888; --accent: #c8a96e; --surface: #141414; }
     body { background: var(--bg); color: var(--text); font-family: 'Noto Sans TC', sans-serif; }
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -18,10 +20,15 @@
     .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
     .nav-logo img { height: 40px; width: auto; display: block; }
     .nav-logo span { font-size: 1.1rem; font-weight: 400; letter-spacing: 0.18em; color: #ffffff; font-family: 'Noto Serif TC', serif; }
-    .back-btn { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    .back-btn { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
     .back-btn:hover { color: var(--accent); }
     .wrap { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
-    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 40px; text-align: center; }
+    .page-title {
+      font-size: 2rem; font-weight: 800; margin-bottom: 8px; text-align: center;
+      background: linear-gradient(135deg, #c8a96e, #e0c080);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .page-desc { text-align: center; color: var(--muted); font-size: 0.95rem; margin-bottom: 48px; letter-spacing: 0.05em; }
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
     .blog-card {
       background: rgba(26,26,26,0.8); border: 1px solid var(--border);
@@ -29,6 +36,7 @@
       transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column;
     }
     .blog-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .blog-card-cover { width: 100%; height: 160px; object-fit: cover; }
     .blog-card-cover-placeholder {
       width: 100%; height: 160px;
       background: linear-gradient(135deg, #1e1a12, #2a2520);
@@ -36,28 +44,49 @@
     }
     .blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
     .blog-card-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; }
-    .blog-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .blog-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.5; }
     .blog-card-summary { font-size: 0.85rem; color: var(--muted); flex: 1; line-height: 1.9; }
-    .blog-loading { color: var(--muted); text-align: center; padding: 40px; }
-    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    .blog-loading { color: var(--muted); text-align: center; padding: 40px; grid-column: 1/-1; }
+    .float-line {
+      position: fixed; bottom: 28px; right: 24px; z-index: 200;
+      display: flex; align-items: center; gap: 10px;
+      background: #06C755; color: #fff; font-weight: 700; font-size: 0.9rem;
+      padding: 12px 20px; border-radius: 999px; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(6,199,85,0.4); transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .float-line:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(6,199,85,0.5); }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 0.85rem; background: var(--surface); }
     footer span { color: var(--accent); }
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .wrap { padding: 100px 20px 60px; }
+    }
   </style>
 </head>
 <body>
+
+<a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="float-line">
+  💬　立即加 LINE
+</a>
+
 <nav>
-  <a href="https://as-ent-tw.com/#hero" class="nav-logo">
-    <img src="logo.png" alt="AS娛樂"/>
+  <a href="https://as-ent-tw.com" class="nav-logo">
+    <img src="/logo.png" alt="AS娛樂"/>
     <span>AS娛樂</span>
   </a>
-  <a href="https://as-ent-tw.com/#blog" class="back-btn">← 返回首頁</a>
+  <a href="https://as-ent-tw.com" class="back-btn">← 返回主頁</a>
 </nav>
+
 <div class="wrap">
-  <h1>所有文章</h1>
+  <h1 class="page-title">所有文章</h1>
+  <p class="page-desc">七年的觀察與心得　寫給每一個正在考慮的你</p>
   <div class="blog-grid" id="blog-grid">
     <p class="blog-loading">載入中...</p>
   </div>
 </div>
+
 <footer><p>© 2026 <span>AS娛樂</span>　八大最誠實經紀 大頭</p></footer>
+
 <script>
   async function loadBlog() {
     const grid = document.getElementById('blog-grid');
@@ -67,7 +96,9 @@
       if (!posts.length) { grid.innerHTML = '<p class="blog-loading">目前還沒有文章</p>'; return; }
       grid.innerHTML = posts.map(post => `
         <a class="blog-card" href="/post.html?slug=${post.slug}">
-          <div class="blog-card-cover-placeholder">✍️</div>
+          ${post.cover
+            ? `<img class="blog-card-cover" src="${post.cover}" alt="${post.title}"/>`
+            : `<div class="blog-card-cover-placeholder">✍️</div>`}
           <div class="blog-card-body">
             <div class="blog-card-date">${post.date}</div>
             <div class="blog-card-title">${post.title}</div>
