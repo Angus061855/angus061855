@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AS娛樂｜八大最誠實經紀 大頭</title>
+  <meta name="author" content="AS娛樂 大頭"/>
+  <meta name="theme-color" content="#080808"/>
   <meta name="description" content="大頭，八大最誠實經紀人，七年經驗3000位面試。不簽合約、不壓薪水、自由排班。台北酒店公關招募諮詢完全免費。"/>
   <meta name="keywords" content="酒店經紀,八大經紀,台北酒店公關,酒店打工,兼職,酒店經紀人推薦"/>
   <meta name="robots" content="index, follow"/>
@@ -13,6 +15,14 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://as-ent-tw.com/"/>
   <meta property="og:image" content="https://as-ent-tw.com/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="AS娛樂｜八大最誠實經紀 大頭"/>
+  <meta name="twitter:description" content="不簽合約、不壓薪水、自由排班。七年經驗，3000位面試，最透明的經紀人。"/>
+  <meta name="twitter:image" content="https://as-ent-tw.com/og-image.jpg"/>
+  <link rel="alternate" hreflang="zh-TW" href="https://as-ent-tw.com/"/>
+  <link rel="alternate" hreflang="x-default" href="https://as-ent-tw.com/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet"/>
 
   <!-- 結構化資料 SEO/AEO/GEO -->
@@ -25,6 +35,26 @@
     "description": "七年八大行業從業經驗，個人面試超過3000位，台北最誠實的酒店公關經紀人",
     "url": "https://as-ent-tw.com",
     "sameAs": ["https://line.me/ti/p/tTUQTPHKrE"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "AS娛樂",
+    "areaServed": ["台北市", "新北市", "桃園市", "新竹市", "台中市", "台南市", "高雄市"],
+    "serviceType": "酒店公關招募與職涯諮詢",
+    "availableLanguage": ["zh-TW", "zh-Hant"],
+    "url": "https://as-ent-tw.com/",
+    "sameAs": ["https://line.me/ti/p/tTUQTPHKrE"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AS娛樂",
+    "url": "https://as-ent-tw.com/"
   }
   </script>
   <script type="application/ld+json">
@@ -45,7 +75,6 @@
     ]
   }
   </script>
-</head>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -58,6 +87,7 @@
       --line-green-light: #22885a;
     }
     html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 88px; }
     body {
       background: #080808; color: var(--text);
       font-family: 'Noto Sans TC', sans-serif;
@@ -161,6 +191,13 @@
     .hero-sub-shine span:nth-child(15) { animation-delay: 2.52s; }
     .hero-sub-shine span:nth-child(16) { animation-delay: 2.70s; }
     @keyframes shine { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0);
+      white-space: nowrap; border: 0;
+    }
 
     /* Hero Pills — 精品標籤升級 */
     .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 48px; }
@@ -454,7 +491,7 @@
   <canvas id="velvet-bg"></canvas>
 
 <!-- 浮動 LINE 按鈕 -->
-<a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="float-line">
+<a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="float-line">
   <span class="float-line-dot"></span>
   <span>立即加 LINE</span>
 </a>
@@ -473,7 +510,7 @@
     <a href="#blog">部落格</a>
     <a href="#contact">聯絡我</a>
   </div>
-  <button class="hamburger" id="hamburger" aria-label="選單">
+  <button class="hamburger" id="hamburger" aria-label="選單" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -496,7 +533,8 @@
     <span class="hero-badge">七年從業經驗</span>
     <span class="hero-badge">有問必答</span>
   </div>
-  <p class="hero-sub-shine">
+  <h1 class="visually-hidden">AS娛樂 台北酒店公關招募｜八大最誠實經紀 大頭</h1>
+  <p class="hero-sub-shine" aria-hidden="true">
     <span>不</span><span>要</span><span>讓</span><span>未</span><span>來</span><span>的</span><span>你</span>
     <br/>
     <span>討</span><span>厭</span><span>現</span><span>在</span><span>的</span><span>自</span><span>己</span>
@@ -518,7 +556,7 @@
     </div>
   </div>
   <div class="hero-cta">
-    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="btn-primary">立即詢問 LINE</a>
+    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="btn-primary">立即詢問 LINE</a>
     <a href="#about" class="btn-outline">了解更多</a>
   </div>
 </section>
@@ -535,7 +573,7 @@
         <p>在八大行業　<strong>誠實是最稀缺的東西</strong></p>
         <p>我從業七年　個人面試超過 3000 位女孩<br/>見過太多人因為資訊不透明而受傷</p>
         <p>我的原則只有一個　<strong>把真實的情況告訴你</strong><br/>讓你在完全了解後再做決定　沒有任何壓力</p>
-        <p>想找我可以 <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank">直接點擊 LINE 詢問</a></p>
+        <p>想找我可以 <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer">直接點擊 LINE 詢問</a></p>
       </div>
       <div class="about-highlights">
         <div class="highlight-item"><h4>完全透明</h4><p>薪資　環境　工作內容全程說清楚　沒有隱藏扣款</p></div>
@@ -633,7 +671,7 @@
     </div>
   </div>
   <div style="text-align:center; margin-top:40px;">
-    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="btn-primary" style="font-size:1.05rem; padding:15px 52px;">加 LINE 詢問職缺</a>
+    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:1.05rem; padding:15px 52px;">加 LINE 詢問職缺</a>
   </div>
 </section>
 
@@ -665,7 +703,7 @@
         <button id="faq-toggle-btn" onclick="toggleMoreFaq()" style="background:transparent;border:1px solid rgba(200,169,110,0.35);color:var(--accent);padding:10px 28px;border-radius:999px;font-size:0.88rem;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:0.1em;box-shadow:inset 0 1px 0 rgba(200,169,110,0.07);transition:background 0.2s,border-color 0.2s;">觀看更多問題 ↓</button>
       </div>
     </div>
-    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="faq-line-banner">
+    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="faq-line-banner">
       <div class="faq-line-icon">LINE</div>
       <div class="faq-line-text">
         <strong>還有其他問題　直接加我 LINE</strong>
@@ -700,7 +738,7 @@
       <h2 style="font-size:clamp(1rem,2.5vw,1.3rem);font-weight:400;color:#666;letter-spacing:0.15em;line-height:2;text-align:center;margin-bottom:0;">問問題 不代表你要來做<br>但如果你不問我<br>你永遠不會知道</h2>
       <h2 style="font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.2;letter-spacing:0.04em;text-align:center;background:linear-gradient(135deg,#c8a96e 0%,#f0d898 45%,#c8a96e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;margin:8px 0 4px;">八大行業<br/>到底長什麼樣子</h2>
       <h2 style="font-size:clamp(0.95rem,2vw,1.1rem);font-weight:400;color:#555;letter-spacing:0.15em;line-height:2;text-align:center;margin-bottom:32px;">不管你問什麼　我都有問必答</h2>
-      <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="contact-cta-btn">點我詢問工作</a>
+      <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="contact-cta-btn">點我詢問工作</a>
       <p class="contact-note">我會親自回覆　不是 AI 回覆</p>
     </div>
   </div>
@@ -719,8 +757,17 @@
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
-  function closeMenu() { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }
+  function setMenuState(isOpen) {
+    hamburger.classList.toggle('open', isOpen);
+    mobileMenu.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  hamburger.addEventListener('click', () => setMenuState(!mobileMenu.classList.contains('open')));
+  function closeMenu() { setMenuState(false); }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+  });
 
   function animateCounter(el, target, duration, suffix) {
     const start = Date.now();
@@ -833,6 +880,7 @@
   (function() {
     const canvas = document.getElementById('velvet-bg');
     const ctx = canvas.getContext('2d');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     canvas.style.position = 'fixed'; canvas.style.top = '0'; canvas.style.left = '0';
     canvas.style.width = '100%'; canvas.style.height = '100%';
     canvas.style.zIndex = '-1'; canvas.style.pointerEvents = 'none';
@@ -882,12 +930,14 @@
     }
     function draw() {
       t++; ctx.fillStyle = '#060606'; ctx.fillRect(0, 0, W, H);
-      bumps.forEach(b => drawBump(b, t)); folds.forEach(f => drawFold(f, t));
+      if (!reduceMotion) {
+        bumps.forEach(b => drawBump(b, t)); folds.forEach(f => drawFold(f, t));
+      }
       const vignette = ctx.createRadialGradient(W*0.5, H*0.45, 0, W*0.5, H*0.45, Math.max(W,H)*0.78);
       vignette.addColorStop(0, 'rgba(0,0,0,0)'); vignette.addColorStop(0.55, 'rgba(0,0,0,0.18)');
       vignette.addColorStop(0.80, 'rgba(0,0,0,0.55)'); vignette.addColorStop(1, 'rgba(0,0,0,0.85)');
       ctx.fillStyle = vignette; ctx.fillRect(0, 0, W, H);
-      requestAnimationFrame(draw);
+      if (!document.hidden) requestAnimationFrame(draw);
     }
     draw();
   })();
