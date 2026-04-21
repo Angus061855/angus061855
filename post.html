@@ -1,9 +1,9 @@
  (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/post.html b/post.html
-index af486e1d441f8405c6b450c92eb8109705df65c2..dda6b7453c75b9d005b67f768febe7b718381d86 100644
+index af486e1d441f8405c6b450c92eb8109705df65c2..08870f8dfc92ae73f03f5846f5da1bd12de6b3ad 100644
 --- a/post.html
 +++ b/post.html
-@@ -1,50 +1,56 @@
+@@ -1,50 +1,60 @@
  <!DOCTYPE html>
  <html lang="zh-TW">
  <head>
@@ -11,6 +11,8 @@ index af486e1d441f8405c6b450c92eb8109705df65c2..dda6b7453c75b9d005b67f768febe7b7
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 -  <title>AS娛樂｜八大最誠實經紀 大頭</title>
 +  <title>酒店公關文章｜AS娛樂 大頭</title>
++  <meta name="author" content="AS娛樂 大頭"/>
++  <meta name="theme-color" content="#0a0a0a"/>
    <meta name="description" content="大頭，八大最誠實經紀人，七年經驗3000位面試。不簽合約、不壓薪水、自由排班。台北酒店公關招募諮詢完全免費。"/>
    <meta name="keywords" content="酒店經紀,八大經紀,台北酒店公關,酒店打工,兼職,酒店經紀人推薦"/>
    <meta name="robots" content="index, follow"/>
@@ -26,6 +28,8 @@ index af486e1d441f8405c6b450c92eb8109705df65c2..dda6b7453c75b9d005b67f768febe7b7
 +  <meta name="twitter:title" content="酒店公關文章｜AS娛樂 大頭"/>
 +  <meta name="twitter:description" content="酒店公關入行知識、薪資、面試流程與工作建議。"/>
 +  <meta name="twitter:image" content="https://as-ent-tw.com/og-image.jpg"/>
++  <link rel="alternate" hreflang="zh-TW" href="https://as-ent-tw.com/post.html"/>
++  <link rel="alternate" hreflang="x-default" href="https://as-ent-tw.com/post.html"/>
 +  <link rel="preconnect" href="https://fonts.googleapis.com"/>
 +  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet"/>
@@ -64,7 +68,7 @@ index af486e1d441f8405c6b450c92eb8109705df65c2..dda6b7453c75b9d005b67f768febe7b7
        word-break: keep-all;
        overflow-wrap: break-word;
        letter-spacing: 0.02em;
-@@ -93,51 +99,51 @@
+@@ -93,51 +103,51 @@
        display: inline-flex; align-items: center; gap: 8px;
        background: linear-gradient(135deg, var(--line-green), var(--line-green-light));
        color: rgba(255,255,255,0.92); font-weight: 700; font-size: 0.88rem;
@@ -117,7 +121,11 @@ index af486e1d441f8405c6b450c92eb8109705df65c2..dda6b7453c75b9d005b67f768febe7b7
      <div class="body" id="body"></div>
    </div>
    <div class="state error" id="error" style="display:none">
-@@ -159,155 +165,168 @@
+@@ -155,159 +165,187 @@
+ 
+   function getBaseViews(slug) {
+     let hash = 0;
+     for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) & 0xffffffff;
      return 1235 + (Math.abs(hash) % (4257 - 1235 + 1));
    }
    function getDailyAdd(slug, days) {
@@ -139,7 +147,11 @@ index af486e1d441f8405c6b450c92eb8109705df65c2..dda6b7453c75b9d005b67f768febe7b7
      const slug = new URLSearchParams(window.location.search).get('slug');
      if (!slug) { showError(); return; }
      try {
-       const res = await fetch(`${WORKER}/posts/${slug}`);
+-      const res = await fetch(`${WORKER}/posts/${slug}`);
++      const controller = new AbortController();
++      const timeout = setTimeout(() => controller.abort(), 4500);
++      const res = await fetch(`${WORKER}/posts/${slug}`, { signal: controller.signal });
++      clearTimeout(timeout);
        if (!res.ok) throw new Error();
        const post = await res.json();
  
@@ -173,6 +185,18 @@ index af486e1d441f8405c6b450c92eb8109705df65c2..dda6b7453c75b9d005b67f768febe7b7
    }
  });
  document.head.appendChild(schema);
++const breadcrumb = document.createElement('script');
++breadcrumb.type = 'application/ld+json';
++breadcrumb.text = JSON.stringify({
++  "@context": "https://schema.org",
++  "@type": "BreadcrumbList",
++  "itemListElement": [
++    {"@type":"ListItem","position":1,"name":"首頁","item":"https://as-ent-tw.com/"},
++    {"@type":"ListItem","position":2,"name":"部落格","item":"https://as-ent-tw.com/blog.html"},
++    {"@type":"ListItem","position":3,"name":post.title,"item":postUrl}
++  ]
++});
++document.head.appendChild(breadcrumb);
  
  // 動態更新 meta description
  document.querySelector('meta[name="description"]').setAttribute('content', post.summary || post.title);
