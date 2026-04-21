@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<head>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -15,12 +16,23 @@
   }
 }
 </script>
-<head>
+
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>部落格｜AS娛樂</title>
+  <title>酒店公關部落格｜AS娛樂 大頭</title>
   <meta name="description" content="AS娛樂大頭的部落格，七年八大行業經驗，分享最真實的酒店公關入行知識。"/>
   <link rel="canonical" href="https://as-ent-tw.com/blog.html"/>
+  <meta property="og:title" content="酒店公關部落格｜AS娛樂 大頭"/>
+  <meta property="og:description" content="七年八大行業經驗，分享最真實的酒店公關入行知識與面試建議。"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://as-ent-tw.com/blog.html"/>
+  <meta property="og:image" content="https://as-ent-tw.com/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="酒店公關部落格｜AS娛樂 大頭"/>
+  <meta name="twitter:description" content="七年八大行業經驗，分享最真實的酒店公關入行知識與面試建議。"/>
+  <meta name="twitter:image" content="https://as-ent-tw.com/og-image.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -119,7 +131,7 @@
 <body>
   <canvas id="velvet-bg"></canvas>
 
-<a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" class="float-line">
+<a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="float-line">
   <span class="float-line-dot"></span>
   <span>立即加 LINE</span>
 </a>
@@ -172,7 +184,7 @@
       grid.innerHTML = posts.map(post => `
         <a class="blog-card" href="/post.html?slug=${post.slug}">
           ${post.cover
-            ? `<img class="blog-card-cover" src="${post.cover}" alt="${post.title}"/>`
+            ? `<img class="blog-card-cover" src="${post.cover}" alt="${post.title}" loading="lazy" decoding="async"/>`
             : `<div class="blog-card-cover-placeholder"></div>`}
           <div class="blog-card-body">
             <div class="blog-card-meta">
@@ -194,6 +206,7 @@
   (function() {
     const canvas = document.getElementById('velvet-bg');
     const ctx = canvas.getContext('2d');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     canvas.style.position = 'fixed'; canvas.style.top = '0'; canvas.style.left = '0';
     canvas.style.width = '100%'; canvas.style.height = '100%';
     canvas.style.zIndex = '-1'; canvas.style.pointerEvents = 'none';
@@ -241,12 +254,14 @@
     }
     function draw() {
       t++; ctx.fillStyle = '#060606'; ctx.fillRect(0, 0, W, H);
-      bumps.forEach(b => drawBump(b, t)); folds.forEach(f => drawFold(f, t));
+      if (!reduceMotion) {
+        bumps.forEach(b => drawBump(b, t)); folds.forEach(f => drawFold(f, t));
+      }
       const vignette = ctx.createRadialGradient(W*0.5, H*0.45, 0, W*0.5, H*0.45, Math.max(W,H)*0.78);
       vignette.addColorStop(0, 'rgba(0,0,0,0)'); vignette.addColorStop(0.55, 'rgba(0,0,0,0.18)');
       vignette.addColorStop(0.80, 'rgba(0,0,0,0.55)'); vignette.addColorStop(1, 'rgba(0,0,0,0.85)');
       ctx.fillStyle = vignette; ctx.fillRect(0, 0, W, H);
-      requestAnimationFrame(draw);
+      if (!document.hidden) requestAnimationFrame(draw);
     }
     draw();
   })();
