@@ -527,9 +527,6 @@
     }
     .float-line:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,107,69,0.45); }
     .float-line-dot { width: 6px; height: 6px; background: rgba(255,255,255,0.7); border-radius: 50%; flex-shrink: 0; }
-    .float-line-text { transition: opacity 0.3s, max-width 0.3s; white-space: nowrap; }
-    .float-line.compact { padding: 12px; gap: 0; max-width: 44px; border-radius: 50%; }
-    .float-line.compact .float-line-text { opacity: 0; max-width: 0; overflow: hidden; }
 
     /* 回到頂部按鈕 */
     .back-to-top {
@@ -808,8 +805,6 @@
     mainNav.classList.toggle('scrolled', y > 60);
     backToTop.classList.toggle('visible', y > 400);
     // 往下滑縮小浮動按鈕
-    if (y > lastScrollY + 10) floatLine.classList.add('compact');
-    else floatLine.classList.remove('compact');
     lastScrollY = y;
     // Hero 視差
     const hero = document.getElementById('hero');
