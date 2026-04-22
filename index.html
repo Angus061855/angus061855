@@ -54,10 +54,10 @@
 
     /* 滾入動畫 */
     .fade-up {
-      opacity: 0;
-      transition: opacity 0.8s ease;
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .fade-up.visible { opacity: 1; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* NAV */
     nav {
@@ -270,8 +270,8 @@
     footer    { background: rgba(6,6,6,0.6); }
 
     /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
-    .about-text p { color: var(--muted); margin-bottom: 20px; line-height: 2; letter-spacing: 0.05em; }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+    .about-text p { color: var(--muted); margin-bottom: 20px; line-height: 2; letter-spacing: 0.05em; text-align: center; }
     .about-text strong { color: var(--text); }
     .about-text a { color: var(--accent); text-decoration: underline; }
     .about-highlights { display: flex; flex-direction: column; gap: 10px; }
@@ -295,7 +295,7 @@
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .feature-card {
       background: linear-gradient(160deg, rgba(18,14,10,0.9) 0%, rgba(10,8,6,0.85) 100%);
-      border: 1px solid var(--gold-border); padding: 28px 22px;
+      border: 1px solid var(--gold-border); padding: 24px 20px;
       border-radius: var(--radius-card); position: relative; overflow: hidden;
       box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(200,169,110,0.07);
       transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s; text-align: center;
@@ -305,9 +305,11 @@
       background: linear-gradient(90deg, transparent, rgba(200,169,110,0.45), transparent);
     }
     .feature-card:hover { border-color: rgba(200,169,110,0.45); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(200,169,110,0.09), 0 4px 24px rgba(0,0,0,0.4); }
-    .feature-icon { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 8px; color: var(--accent2); }
-    .feature-card h3 { font-size: 0.88rem; margin-bottom: 8px; letter-spacing: 0.06em; color: var(--accent); font-family: 'Noto Serif TC', serif; opacity: 0.8; }
-    .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.9; letter-spacing: 0.04em; }
+    .feature-icon { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 6px; color: var(--accent2); text-transform: none; }
+    .feature-card h3 { font-size: 0.82rem; margin-bottom: 8px; letter-spacing: 0.06em; color: #f0f0f0; font-family: 'Noto Serif TC', serif; }
+    .feature-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.9; letter-spacing: 0.04em; }
+    @media (max-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .features-grid { grid-template-columns: 1fr; } }
 
     /* FAQ */
     .faq-line-banner {
@@ -570,13 +572,14 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-text fade-up">
-        <p class="section-label" style="font-size:1.6rem; font-weight:700; color:var(--accent); text-align:left; letter-spacing:0.06em;">關於我</p>
-        <h2 style="text-align:left; font-size:clamp(1.4rem,3vw,2rem); font-weight:700; line-height:1.4; margin-bottom:20px; letter-spacing:0.06em; font-family:'Noto Serif TC',serif;">大頭<br/>八大最誠實經紀人</h2>
+        <p class="section-label" style="font-size:1.6rem; font-weight:700; color:var(--accent); text-align:center; letter-spacing:0.06em;">關於我</p>
+        <h2 style="text-align:center; font-size:clamp(1.4rem,3vw,2rem); font-weight:700; line-height:1.4; margin-bottom:20px; letter-spacing:0.06em; font-family:'Noto Serif TC',serif;">大頭<br/>八大最誠實經紀人</h2>
         <p>在八大行業　<strong>誠實是最稀缺的東西</strong></p>
         <p>我從業七年　個人面試超過 3000 位女孩<br/>見過太多人因為資訊不透明而受傷</p>
         <p>我的原則只有一個　<strong>把真實的情況告訴你</strong><br/>讓你在完全了解後再做決定　沒有任何壓力</p>
         <p>想找我可以 <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer">直接點擊詢問</a></p>
       </div>
+
     </div>
   </div>
 </section>
@@ -589,12 +592,15 @@
     <h2 class="section-title fade-up" style="transition-delay:0.05s">業界最誠實的承諾</h2>
     <p class="section-desc fade-up" style="transition-delay:0.1s">誠實 不話術 只講實話<br/>這是我七年來唯一的做事方式</p>
     <div class="features-grid">
-      <div class="feature-card fade-up" style="transition-delay:0.0s"><div class="feature-icon">薪資透明</div><h3>上班前說清楚</h3><p>入行前完整說明計算方式<br/>不會有隱藏費用或事後扣款</p></div>
-      <div class="feature-card fade-up" style="transition-delay:0.1s"><div class="feature-icon">安全第一</div><h3>你的底線你決定</h3><p>工作環境事先評估<br/>任何超出範圍的要求都可以直接拒絕</p></div>
-      <div class="feature-card fade-up" style="transition-delay:0.2s"><div class="feature-icon">時間彈性</div><h3>配合你的行程</h3><p>可短期　兼職或配合自己的行程<br/>不綁定任何合約</p></div>
-      <div class="feature-card fade-up" style="transition-delay:0.3s"><div class="feature-icon">一對一服務</div><h3>量身規劃方向</h3><p>每個人的情況都不同<br/>我會根據你的狀況給出最適合的建議</p></div>
-      <div class="feature-card fade-up" style="transition-delay:0.4s"><div class="feature-icon">完全透明</div><h3>沒有隱藏資訊</h3><p>薪資　環境　工作內容全程說清楚　沒有隱藏扣款</p></div>
-<div class="feature-card fade-up" style="transition-delay:0.5s"><div class="feature-icon">隱私保護</div><h3>個資嚴格保密</h3><p>不必告知家人　男友　朋友　我對每位女孩的承諾</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.0s"><div class="feature-icon">不簽合約</div><h3>想來就來想走就走</h3><p>不靠簽約綁住人，只靠真誠留住你</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.05s"><div class="feature-icon">不壓薪水</div><h3>每週六固定發薪</h3><p>固定時間入帳，想現領也可以</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.1s"><div class="feature-icon">時間彈性</div><h3>配合你的行程</h3><p>可短期、兼職或配合自己的行程，不綁定任何合約</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.15s"><div class="feature-icon">隱私保護</div><h3>個資嚴格保密</h3><p>不必告知家人、男友、朋友，這是對你的承諾</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.2s"><div class="feature-icon">安全第一</div><h3>你的底線你決定</h3><p>任何超出範圍的要求都可以直接拒絕</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.25s"><div class="feature-icon">薪資透明</div><h3>上班前說清楚</h3><p>入行前完整說明計算方式，不會有隱藏費用或事後扣款</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.3s"><div class="feature-icon">一對一服務</div><h3>量身規劃方向</h3><p>每個人狀況不同，我會根據你給出最適合的建議</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.35s"><div class="feature-icon">真人陪伴</div><h3>都是本人回覆</h3><p>不是 AI 客服，有問題隨時找我，我都在</p></div>
+      <div class="feature-card fade-up" style="transition-delay:0.4s"><div class="feature-icon">專業引導</div><h3>七年帶你少走彎路</h3><p>從面試到上班全程引導，找到最適合你的方向</p></div>
     </div>
   </div>
 </section>
@@ -638,14 +644,14 @@
     <p class="section-desc fade-up" style="transition-delay:0.1s">有任何問題都可以直接問我<br/>這裡先回答最常見的幾個問題</p>
     <div class="faq-list fade-up" style="transition-delay:0.15s">
       <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>需要簽合約嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">完全不需要　我不靠合約綁住任何人　<br>想來就來　想走就走　<br>沒有任何違約金或限制</div></div>
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>家人男友朋友會知道嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">不會　個人資料嚴格保密　<br>工作地點 薪資 一切資訊都不會外流　<br>這是我對每一位女孩的承諾</div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>家人男友朋友會知道嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">不會　個人資料嚴格保密　工作地點　薪資　<br>一切資訊都不會外流　<br>這是我對每一位女孩的承諾</div></div>
       <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>沒有經驗可以做嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">完全可以　我會從頭帶你了解整個流程　<br>新人反而更好　因為沒有壞習慣需要改正</div></div>
       <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>酒店薪水怎麼計算？</span><span class="faq-plus">+</span></button><div class="faq-answer">以節計算　每 10 分鐘一節　<br>台北禮服店節薪約 230 到 290 元　<br>詳細數字依店家不同　<br>我會在面試前完整說明　不會有任何隱藏費用</div></div>
-      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>可以只做短期嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">可以　很多人只想做幾個月應急 <br>時間　天數都可以自己安排　<br>沒有最低上班要求</div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>可以只做短期嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">可以　很多人只做幾個月應急　完全沒問題　<br>時間　天數都可以自己安排　<br>沒有最低上班要求</div></div>
       <div id="faq-more" style="display:none; flex-direction:column; gap:8px;">
-        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>工作會不會被強迫做不想做的事？</span><span class="faq-plus">+</span></button><div class="faq-answer">不會　任何超出範圍的要求<br>你都可以直接拒絕　<br>這是你的底線　沒有人可以強迫你</div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>工作會不會被強迫做不想做的事？</span><span class="faq-plus">+</span></button><div class="faq-answer">不會　任何超出範圍的要求你都可以直接拒絕　<br>這是你的底線　沒有人可以強迫你</div></div>
         <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>試做後覺得不適合　可以離開嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">當然可以　想來就來　想走就走　<br>沒有違約金也沒有任何限制</div></div>
-        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>酒店一定要喝酒嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">在酒店上班一定會喝到酒的　<br>但喝不下可以直接跟客人說喝不下了　<br>客人最多把你換掉　<br>他真的喜歡你也會留下你</div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>酒店一定要喝酒嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">在酒店上班一定會喝到酒的　<br>但喝不下可以直接跟客人說喝不下了　<br>客人最多把你換掉　他真的喜歡你也會留下你</div></div>
         <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>我只是想了解　不想做可以嗎？</span><span class="faq-plus">+</span></button><div class="faq-answer">完全沒問題　問了不代表一定要來做　<br>我不會強迫任何人　<br>讓你在完全了解後自己做決定</div></div>
         <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>白天有工作或有門禁怎麼辦？</span><span class="faq-plus">+</span></button><div class="faq-answer">不用擔心　我配合的店家有各種類型<br>有午場也有晚場<br>不管是正職或兼職時間都能彈性安排</div></div>
         <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>男朋友或家人怎麼隱瞞？</span><span class="faq-plus">+</span></button><div class="faq-answer">這個問題私訊我　我怕別人看到<br>但我有方法幫你解決</div></div>
@@ -729,9 +735,6 @@
   hamburger.addEventListener('click', () => setMenuState(!mobileMenu.classList.contains('open')));
   function closeMenu() { setMenuState(false); }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
-  document.addEventListener('click', (e) => {
-  if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
-});
 
   // 滾入動畫
   const fadeObserver = new IntersectionObserver((entries) => {
