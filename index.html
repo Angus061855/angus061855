@@ -735,6 +735,9 @@
   hamburger.addEventListener('click', () => setMenuState(!mobileMenu.classList.contains('open')));
   function closeMenu() { setMenuState(false); }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
+  document.addEventListener('click', (e) => {
+  if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+});
 
   // 滾入動畫
   const fadeObserver = new IntersectionObserver((entries) => {
