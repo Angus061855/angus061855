@@ -490,9 +490,11 @@
       .about-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 16px; }
       .stat-num { font-size: 2rem; }
-      .features-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
       .float-line { bottom: 20px; right: 16px; font-size: 0.8rem; padding: 9px 16px; }
       .hero-pills { max-width: 280px; }
+    @media (max-width: 380px) {
+     .features-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -710,7 +712,7 @@
   </div>
   <p class="footer-slogan">八大最誠實經紀　大頭</p>
   <div class="footer-divider"></div>
-  <p style="margin-bottom:8px;">© 2026 <span>AS娛樂</span>　版權所有</p>
+  <p style="margin-bottom:8px;">© 2026 <span>AS娛樂</span>版權所有</p>
   <p style="font-size:0.75rem; color:#3a3a3a; letter-spacing:0.08em;">
     本站累計瀏覽　<span id="total-views" style="color:var(--accent); font-weight:700;">0</span>　次
   </p>
