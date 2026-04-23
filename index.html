@@ -578,11 +578,12 @@
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到頂部">↑</button>
 
 <nav id="mainNav">
-  <div class="nav-logo">
+  <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer;">
     <img src="logo.png" alt="AS娛樂"/>
     <span style="font-size:1.1rem; font-weight:400; letter-spacing:0.18em; color:#ffffff; font-family:'Noto Serif TC', serif;">AS娛樂</span>
   </div>
   <div class="nav-links">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">首頁</a>
     <a href="#about">關於我</a>
     <a href="#features">為什麼選我</a>
     <a href="#jobs">職缺</a>
@@ -596,6 +597,7 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();return false;">首頁</a>
   <a href="#about" onclick="closeMenu()">關於我</a>
   <a href="#features" onclick="closeMenu()">為什麼選我</a>
   <a href="#jobs" onclick="closeMenu()">職缺</a>
