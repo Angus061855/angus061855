@@ -590,11 +590,6 @@
 </head>
 <body>
 
-  <!-- 11. 夜間限定文案 -->
-  <div class="night-banner" id="nightBanner">
-    🌙 現在是深夜　很多人都在這個時候才敢問問題　<strong>我在線上　直接問我</strong>
-  </div>
-
   <canvas id="velvet-bg"></canvas>
 
   <!-- 9. 手機版底部通欄 -->
@@ -602,13 +597,6 @@
     <span class="mobile-line-bar-dot"></span>
     <span>免費諮詢　立即加 LINE</span>
   </a>
-
-  <!-- 12. 停留 30 秒提示 -->
-  <div class="stay-toast" id="stayToast">
-    <button class="stay-toast-close" onclick="document.getElementById('stayToast').classList.remove('show')">✕</button>
-    <p>還在考慮嗎？<br>問問題完全免費　不代表你要來做</p>
-    <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer">直接問我 →</a>
-  </div>
 
   <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="float-line" id="floatLine">
     <span class="float-line-dot"></span>
@@ -1258,24 +1246,6 @@
     document.getElementById('qs-result').classList.remove('active');
     document.getElementById('qs0').classList.add('active');
   }
-
-  /* ── 11. 夜間限定文案 ── */
-  (function() {
-    const h = new Date().getHours();
-    if (h >= 22 || h < 4) {
-      document.getElementById('nightBanner').style.display = 'block';
-    }
-  })();
-
-  /* ── 12. 停留 30 秒彈出提示 ── */
-  let stayShown = false;
-  setTimeout(() => {
-    if (!stayShown) {
-      stayShown = true;
-      document.getElementById('stayToast').classList.add('show');
-      setTimeout(() => document.getElementById('stayToast').classList.remove('show'), 8000);
-    }
-  }, 30000);
 
   /* ── 流動絲絨背景 ── */
   (function() {
