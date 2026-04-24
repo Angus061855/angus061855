@@ -339,39 +339,39 @@
     }
 
     /* 5. 對比區塊 */
-    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .compare-card {
-      border-radius: var(--radius-card); padding: 28px 24px;
-      border: 1px solid; position: relative; overflow: hidden;
-    }
-    .compare-card.us {
-      background: linear-gradient(160deg, rgba(18,14,8,0.95), rgba(12,10,6,0.9));
-      border-color: rgba(200,169,110,0.35);
-      box-shadow: 0 4px 32px rgba(200,169,110,0.08);
-    }
-    .compare-card.them {
-      background: linear-gradient(160deg, rgba(12,12,12,0.9), rgba(8,8,8,0.85));
-      border-color: rgba(255,255,255,0.06);
-    }
-    .compare-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    }
-    .compare-card.us::before { background: linear-gradient(90deg, transparent, rgba(200,169,110,0.7), transparent); }
-    .compare-card.them::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); }
-    .compare-tag { font-size: 0.72rem; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 16px; display: inline-block; padding: 4px 12px; border-radius: var(--radius-pill); }
-    .compare-card.us .compare-tag { background: rgba(200,169,110,0.12); color: var(--accent2); border: 1px solid rgba(200,169,110,0.3); }
-    .compare-card.them .compare-tag { background: rgba(255,255,255,0.04); color: #666; border: 1px solid rgba(255,255,255,0.08); }
-    .compare-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; font-family: 'Noto Serif TC', serif; }
-    .compare-card.us .compare-title { color: var(--accent2); }
-    .compare-card.them .compare-title { color: #555; }
-    .compare-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .compare-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; line-height: 1.7; letter-spacing: 0.04em; }
-    .compare-card.us .compare-list li { color: #d0c8b8; }
-    .compare-card.them .compare-list li { color: #555; }
-    .compare-list li::before { flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
-    .compare-card.us .compare-list li::before { content: '✓'; color: var(--accent); }
-    .compare-card.them .compare-list li::before { content: '✗'; color: #444; }
-    @media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare-card {
+  border-radius: var(--radius-card); padding: 28px 24px;
+  border: 1px solid; position: relative; overflow: hidden;
+}
+.compare-card.us {
+  background: linear-gradient(160deg, rgba(18,14,8,0.95), rgba(12,10,6,0.9));
+  border-color: rgba(200,169,110,0.35);
+  box-shadow: 0 4px 32px rgba(200,169,110,0.08);
+}
+.compare-card.them {
+  background: linear-gradient(160deg, rgba(28,6,6,0.95), rgba(18,4,4,0.92));
+  border-color: rgba(180,50,50,0.35);
+  box-shadow: 0 4px 32px rgba(180,50,50,0.08);
+}
+.compare-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+}
+.compare-card.us::before { background: linear-gradient(90deg, transparent, rgba(200,169,110,0.7), transparent); }
+.compare-card.them::before { background: linear-gradient(90deg, transparent, rgba(180,50,50,0.6), transparent); }
+.compare-tag { font-size: 0.72rem; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 16px; display: inline-block; padding: 4px 12px; border-radius: var(--radius-pill); }
+.compare-card.us .compare-tag { background: rgba(200,169,110,0.12); color: var(--accent2); border: 1px solid rgba(200,169,110,0.3); }
+.compare-card.them .compare-tag { background: rgba(180,50,50,0.15); color: #e07070; border: 1px solid rgba(180,50,50,0.4); }
+.compare-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; font-family: 'Noto Serif TC', serif; }
+.compare-card.us .compare-title { color: var(--accent2); }
+.compare-card.them .compare-title { color: #e07070; }
+.compare-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.compare-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; line-height: 1.7; letter-spacing: 0.04em; font-family: 'Noto Sans TC', sans-serif; }
+.compare-card.us .compare-list li { color: #d0c8b8; }
+.compare-card.them .compare-list li { color: #c09090; }
+.compare-list li span:first-child { display: inline-block; width: 1.2em; flex-shrink: 0; }
+@media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+
 
     /* 4. 匿名心得 */
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -562,7 +562,7 @@
     .exit-modal h3 { font-size: 1.4rem; font-weight: 900; color: var(--accent2); margin-bottom: 12px; font-family: 'Noto Serif TC', serif; line-height: 1.4; }
     .exit-modal p { font-size: 0.9rem; color: var(--muted); line-height: 2; margin-bottom: 28px; letter-spacing: 0.04em; }
     .exit-modal a { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #c8a96e, #e0c080); color: #0a0a0a; font-weight: 900; font-size: 1rem; padding: 14px 40px; border-radius: var(--radius-btn); text-decoration: none; letter-spacing: 0.12em; box-shadow: 0 4px 24px rgba(200,169,110,0.3); }
-    .exit-modal-skip { display: block; margin-top: 14px; font-size: 0.78rem; color: #444; cursor: pointer; letter-spacing: 0.08em; transition: color 0.2s; background: none; border: none; font-family: 'Noto Sans TC', sans-serif; }
+    .exit-modal-skip { display: block; margin-top: 14px; width: 100%; text-align: center; font-size: 0.78rem; color: #444; cursor: pointer; letter-spacing: 0.08em; transition: color 0.2s; background: none; border: none; font-family: 'Noto Sans TC', sans-serif; }
     .exit-modal-skip:hover { color: #666; }
 
     /* 11. 夜間限定文案 banner */
@@ -914,62 +914,6 @@
 
   <hr class="divider"/>
 
-  <!-- 10. 互動測驗 -->
-  <section id="quiz">
-    <div class="container">
-      <p class="section-label fade-up" style="font-size:1.6rem;font-weight:700;color:var(--accent);letter-spacing:0.06em;">適合測驗</p>
-      <h2 class="section-title fade-up" style="transition-delay:0.05s">你適合做這行嗎</h2>
-      <p class="section-desc fade-up" style="transition-delay:0.1s">三個問題　30 秒知道答案<br/>沒有標準答案　只是幫你想清楚</p>
-      <div class="quiz-wrap fade-up" style="transition-delay:0.15s">
-        <div class="quiz-progress" id="quizProgress">
-          <div class="quiz-progress-dot" id="qd0"></div>
-          <div class="quiz-progress-dot" id="qd1"></div>
-          <div class="quiz-progress-dot" id="qd2"></div>
-        </div>
-        <!-- Q1 -->
-        <div class="quiz-step active" id="qs0">
-          <p class="quiz-q">你現在最主要的考量是什麼？</p>
-          <div class="quiz-options">
-            <button class="quiz-opt" onclick="quizNext(0,0)">💰　需要快速增加收入</button>
-            <button class="quiz-opt" onclick="quizNext(0,1)">🕐　想要時間更彈性自由</button>
-            <button class="quiz-opt" onclick="quizNext(0,2)">🤔　只是好奇想了解看看</button>
-          </div>
-        </div>
-        <!-- Q2 -->
-        <div class="quiz-step" id="qs1">
-          <p class="quiz-q">你對這個行業最擔心的是什麼？</p>
-          <div class="quiz-options">
-            <button class="quiz-opt" onclick="quizNext(1,0)">🔒　隱私問題　怕被認識的人知道</button>
-            <button class="quiz-opt" onclick="quizNext(1,1)">📋　合約問題　怕被綁住走不了</button>
-            <button class="quiz-opt" onclick="quizNext(1,2)">❓　完全不了解　不知道從哪裡問起</button>
-          </div>
-        </div>
-        <!-- Q3 -->
-        <div class="quiz-step" id="qs2">
-          <p class="quiz-q">你希望怎麼開始？</p>
-          <div class="quiz-options">
-            <button class="quiz-opt" onclick="quizNext(2,0)">💬　先問問題　了解清楚再說</button>
-            <button class="quiz-opt" onclick="quizNext(2,1)">👀　先看看資訊　自己研究一下</button>
-            <button class="quiz-opt" onclick="quizNext(2,2)">⚡　直接了解　有興趣就快速行動</button>
-          </div>
-        </div>
-        <!-- 結果 -->
-        <div class="quiz-step" id="qs-result">
-          <div class="quiz-result" id="quizResultBox">
-            <div class="quiz-result-emoji" id="quizEmoji">✨</div>
-            <div class="quiz-result-title" id="quizTitle"></div>
-            <div class="quiz-result-desc" id="quizDesc"></div>
-            <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;margin:0 auto;">加 LINE 問大頭</a>
-            <br/>
-            <button class="quiz-restart" onclick="quizRestart()">重新測驗</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider"/>
-
   <!-- FAQ -->
   <section id="faq">
     <div class="container">
@@ -1021,6 +965,62 @@
       <p class="section-desc fade-up" style="transition-delay:0.1s">七年的觀察與心得<br/>寫給每一個正在考慮的你</p>
       <div class="blog-grid fade-up" style="transition-delay:0.15s" id="blog-grid">
         <p class="blog-loading">載入中...</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+<!-- 10. 互動測驗 -->
+  <section id="quiz">
+    <div class="container">
+      <p class="section-label fade-up" style="font-size:1.6rem;font-weight:700;color:var(--accent);letter-spacing:0.06em;">適合測驗</p>
+      <h2 class="section-title fade-up" style="transition-delay:0.05s">你適合做這行嗎</h2>
+      <p class="section-desc fade-up" style="transition-delay:0.1s">三個問題　30 秒知道答案<br/>沒有標準答案　只是幫你想清楚</p>
+      <div class="quiz-wrap fade-up" style="transition-delay:0.15s">
+        <div class="quiz-progress" id="quizProgress">
+          <div class="quiz-progress-dot" id="qd0"></div>
+          <div class="quiz-progress-dot" id="qd1"></div>
+          <div class="quiz-progress-dot" id="qd2"></div>
+        </div>
+        <!-- Q1 -->
+        <div class="quiz-step active" id="qs0">
+          <p class="quiz-q">你現在最主要的考量是什麼？</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="quizNext(0,0)">💰　需要快速增加收入</button>
+            <button class="quiz-opt" onclick="quizNext(0,1)">🕐　想要時間更彈性自由</button>
+            <button class="quiz-opt" onclick="quizNext(0,2)">🤔　只是好奇想了解看看</button>
+          </div>
+        </div>
+        <!-- Q2 -->
+        <div class="quiz-step" id="qs1">
+          <p class="quiz-q">你對這個行業最擔心的是什麼？</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="quizNext(1,0)">🔒　隱私問題　怕被認識的人知道</button>
+            <button class="quiz-opt" onclick="quizNext(1,1)">📋　合約問題　怕被綁住走不了</button>
+            <button class="quiz-opt" onclick="quizNext(1,2)">❓　完全不了解　不知道從哪裡問起</button>
+          </div>
+        </div>
+        <!-- Q3 -->
+        <div class="quiz-step" id="qs2">
+          <p class="quiz-q">你希望怎麼開始？</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="quizNext(2,0)">💬　先問問題　了解清楚再說</button>
+            <button class="quiz-opt" onclick="quizNext(2,1)">👀　先看看資訊　自己研究一下</button>
+            <button class="quiz-opt" onclick="quizNext(2,2)">⚡　直接了解　有興趣就快速行動</button>
+          </div>
+        </div>
+        <!-- 結果 -->
+        <div class="quiz-step" id="qs-result">
+          <div class="quiz-result" id="quizResultBox">
+            <div class="quiz-result-emoji" id="quizEmoji">✨</div>
+            <div class="quiz-result-title" id="quizTitle"></div>
+            <div class="quiz-result-desc" id="quizDesc"></div>
+            <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;margin:0 auto;">加 LINE 問大頭</a>
+            <br/>
+            <button class="quiz-restart" onclick="quizRestart()">重新測驗</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1249,7 +1249,7 @@
   /* ── 10. 互動測驗 ── */
   const quizAnswers = [];
   const quizResults = [
-    { emoji:'💡', title:'你很適合先了解看看', desc:'你現在最需要的是資訊　不是決定\n問問題完全免費　了解清楚之後再做決定　沒有任何壓力' },
+    { emoji:'💡', title:'你很適合先了解看看', desc:'你現在最需要的是資訊　不是決定\n問問題完全免費　<br> 了解清楚之後再做決定　沒有任何壓力' },
     { emoji:'✅', title:'你的顧慮都可以解決', desc:'隱私和合約問題　是我被問最多的兩件事\n這兩件事我都有完整的答案　加我說清楚給你聽' },
     { emoji:'🚀', title:'你已經準備好了', desc:'你知道自己要什麼　也願意行動\n現在只差一個問題　加我問吧' },
   ];
