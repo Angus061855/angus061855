@@ -238,26 +238,13 @@
     /* SECTION BASE */
     section { padding: 96px 24px; }
     .container { max-width: 900px; margin: 0 auto; }
-    .section-label {
-  font-size: 0.78rem; letter-spacing: 0.3em; color: var(--accent);
-  text-transform: uppercase; margin: 0 auto 14px;
-  text-align: center; display: block;
-  font-family: 'Noto Serif TC', serif;
-  background: linear-gradient(135deg, rgba(200,169,110,0.1), rgba(200,169,110,0.03));
-  border: 1px solid rgba(200,169,110,0.28);
-  padding: 5px 20px; border-radius: 4px;
-  box-shadow: 0 0 18px rgba(200,169,110,0.1), inset 0 1px 0 rgba(200,169,110,0.12);
-  width: fit-content;
-  /* 置中關鍵 */
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 14px;
-}
-   #about .section-label { font-size: clamp(1.4rem,3vw,1.8rem) !important; }
-   #features .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); text-align: center; }
-   #jobs .section-title { font-size: clamp(1.9rem, 4.5vw, 2.8rem); text-align: center; }
-   #faq .section-title { font-size: clamp(1.7rem, 3.5vw, 2.4rem); text-align: center; }
-   #blog .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); text-align: center; }
+    .section-label { font-size: 0.78rem; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; text-align: center; display: block; font-family: 'Noto Serif TC', serif; }
+    .section-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.25; margin-bottom: 20px; text-align: center; letter-spacing: 0.06em; font-family: 'Noto Serif TC', serif; }
+    #about .section-label { font-size: clamp(1.4rem,3vw,1.8rem) !important; }
+    #features .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    #jobs .section-title { font-size: clamp(1.9rem, 4.5vw, 2.8rem); }
+    #faq .section-title { font-size: clamp(1.7rem, 3.5vw, 2.4rem); }
+    #blog .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); }
     .section-desc { color: var(--muted); font-size: 1rem; max-width: 560px; margin-bottom: 56px; text-align: center; line-height: 2.2; letter-spacing: 0.05em; margin-left: auto; margin-right: auto; }
 
     /* 分隔線 */
@@ -268,14 +255,14 @@
     /* Section 背景 */
     #about    { background: rgba(10,8,6,0.12); }
     #features { background: rgba(8,8,8,0.2); }
-    #process  { background: rgba(10,8,6,0.5); }
+    #process  { background: rgba(10,8,6,0.12); }
     #compare  { background: rgba(8,8,8,0.2); }
-    #reviews  { background: rgba(10,8,6,0.5); }
+    #reviews  { background: rgba(10,8,6,0.12); }
     #jobs     { background: rgba(8,8,8,0.2); }
-    #quiz     { background: rgba(10,8,6,0.5); }
+    #quiz     { background: rgba(10,8,6,0.12); }
     #faq      { background: rgba(8,8,8,0.2); }
-    #blog     { background: rgba(10,8,6,0.5); }
-    #contact  { background: rgba(8,8,8,0.2); text-align: center; position: relative; } #contact::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 500px; background: radial-gradient(ellipse, rgba(200,169,110,0.07) 0%, transparent 65%); pointer-events: none; z-index: 0; } #contact .container { position: relative; z-index: 1; }
+    #blog     { background: rgba(10,8,6,0.12); }
+    #contact  { background: rgba(8,8,8,0.2); text-align: center; }
     footer    { background: rgba(6,6,6,0.6); }
 
     /* ABOUT */
@@ -363,28 +350,27 @@
       box-shadow: 0 4px 32px rgba(200,169,110,0.08);
     }
     .compare-card.them {
-      background: linear-gradient(160deg, rgba(20,8,8,0.92), rgba(12,6,6,0.88));
-      border-color: rgba(180,50,50,0.2);
+      background: linear-gradient(160deg, rgba(12,12,12,0.9), rgba(8,8,8,0.85));
+      border-color: rgba(255,255,255,0.06);
     }
-
     .compare-card::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     }
     .compare-card.us::before { background: linear-gradient(90deg, transparent, rgba(200,169,110,0.7), transparent); }
-    .compare-card.them::before { background: linear-gradient(90deg, transparent, rgba(180,50,50,0.4), transparent); }
+    .compare-card.them::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); }
     .compare-tag { font-size: 0.72rem; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 16px; display: inline-block; padding: 4px 12px; border-radius: var(--radius-pill); }
     .compare-card.us .compare-tag { background: rgba(200,169,110,0.12); color: var(--accent2); border: 1px solid rgba(200,169,110,0.3); }
-    .compare-card.them .compare-tag { background: rgba(180,50,50,0.1); color: #c06060; border: 1px solid rgba(180,50,50,0.25); }
+    .compare-card.them .compare-tag { background: rgba(255,255,255,0.04); color: #666; border: 1px solid rgba(255,255,255,0.08); }
     .compare-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; font-family: 'Noto Serif TC', serif; }
     .compare-card.us .compare-title { color: var(--accent2); }
-    .compare-card.them .compare-title { color: #c06060; }
+    .compare-card.them .compare-title { color: #555; }
     .compare-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .compare-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; line-height: 1.7; letter-spacing: 0.04em; }
     .compare-card.us .compare-list li { color: #d0c8b8; }
-    .compare-card.them .compare-list li { color: #a08080; }
+    .compare-card.them .compare-list li { color: #555; }
     .compare-list li::before { flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
     .compare-card.us .compare-list li::before { content: '✓'; color: var(--accent); }
-    .compare-card.them .compare-list li::before { content: '✗'; color: #c04040; }
+    .compare-card.them .compare-list li::before { content: '✗'; color: #444; }
     @media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
 
     /* 4. 匿名心得 */
@@ -427,7 +413,7 @@
     .blog-card:hover { border-color: rgba(200,169,110,0.45); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(200,169,110,0.09), 0 4px 20px rgba(0,0,0,0.35); }
     .blog-card:active { transform: scale(0.98); }
     .blog-card-cover { width: 100%; height: 160px; object-fit: cover; }
-    background: linear-gradient(180deg, rgba(38,28,16,0.65) 0%, rgba(28,20,12,0.7) 100%); display: flex; align-items: center; justify-content: center; }
+    .blog-card-cover-placeholder { width: 100%; height: 160px; position: relative; background: linear-gradient(180deg, rgba(10,8,6,0.9) 0%, rgba(14,11,8,0.95) 100%); display: flex; align-items: center; justify-content: center; }
     .blog-card-cover-placeholder::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(0deg, rgba(200,169,110,0.06) 0%, transparent 100%); }
     .blog-card-cover-placeholder::after { content: ''; width: 90px; height: 90px; background: url('/LOGO 白色.png') center/contain no-repeat; opacity: 0.35; }
     .blog-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
@@ -741,8 +727,8 @@
           <p class="section-label" style="font-size:1.6rem;font-weight:700;color:var(--accent);text-align:center;letter-spacing:0.06em;">關於我</p>
           <h2 style="text-align:center;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;line-height:1.4;margin-bottom:20px;letter-spacing:0.06em;font-family:'Noto Serif TC',serif;">大頭<br/>八大最誠實經紀人</h2>
           <!-- 7. 人味文案 -->
-          <p>說真的　我一開始也不打算做八大</p>
-          <p>但入行第一年　我看到太多女孩被話術騙進去<br/>薪水被壓、被逼簽合約、直接被放生<br/>我覺得　<strong>非常惡劣</strong></p>
+          <p>說真的　我一開始也不打算做這行</p>
+          <p>入行第一年　我看到太多女孩被話術騙進去<br/>薪水被壓、合約被綁、問題沒人回答<br/>我覺得　<strong>這樣不對</strong></p>
           <p>所以我只做一件事　<strong>把真實的情況告訴你</strong><br/>讓你在完全了解後再做決定　沒有任何壓力</p>
           <p>七年了　個人面試超過 3000 位女孩<br/>我沒有一次後悔選擇誠實這條路</p>
           <p>想找我可以 <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer">直接點擊詢問</a></p>
@@ -822,7 +808,7 @@
         <div class="process-step">
           <div class="process-num">1</div>
           <h4>加 LINE 詢問</h4>
-          <p>任何問題<br/>都有問必答<br/>問了不代表要做</p>
+          <p>問任何問題<br/>免費、無壓力<br/>問了不代表要做</p>
         </div>
         <div class="process-step">
           <div class="process-num">2</div>
@@ -832,12 +818,12 @@
         <div class="process-step">
           <div class="process-num">3</div>
           <h4>你自己決定</h4>
-          <p>先瞭解清楚<br/>想做再做<br/>不想做沒關係</p>
+          <p>沒有催促<br/>想做再做<br/>不想做沒關係</p>
         </div>
         <div class="process-step">
           <div class="process-num">4</div>
           <h4>全程陪伴</h4>
-          <p>面試到上班<br/>有問題隨時找我<br/>不會丟棄你</p>
+          <p>面試到上班<br/>有問題隨時找我<br/>不是簽完就不管</p>
         </div>
       </div>
     </div>
@@ -850,7 +836,7 @@
     <div class="container">
       <p class="section-label fade-up" style="font-size:1.6rem;font-weight:700;color:var(--accent);letter-spacing:0.06em;">為什麼選我</p>
       <h2 class="section-title fade-up" style="transition-delay:0.05s">跟其他經紀人有什麼不同</h2>
-      <p class="section-desc fade-up" style="transition-delay:0.1s">不是惡意攻擊同行<br/>只是讓你看清楚差別在哪裡</p>
+      <p class="section-desc fade-up" style="transition-delay:0.1s">不是說別人壞話<br/>只是讓你看清楚差別在哪裡</p>
       <div class="compare-grid fade-up" style="transition-delay:0.15s">
         <div class="compare-card us">
           <span class="compare-tag">大頭 · AS娛樂</span>
@@ -862,7 +848,7 @@
             <li>本人親自回覆　不是助理或 AI 回覆</li>
             <li>個資嚴格保密　不外流出去</li>
             <li>問了不代表要做　無任何壓力</li>
-            <li>七年口碑　只靠個人運作不靠公司</li>
+            <li>七年口碑　個人運作 靠真實評價累積</li>
           </ul>
         </div>
         <div class="compare-card them">
@@ -875,7 +861,7 @@
             <li>助理或群組統一回覆</li>
             <li>個資可能流向你的家人、朋友、男友</li>
             <li>用話術製造緊迫感催你決定</li>
-            <li>與你發生感情等等關係 非常失職的行為</li>
+            <li>與你發生感情關係 非常失職的行為</li>
           </ul>
         </div>
       </div>
@@ -927,8 +913,6 @@
   </section>
 
   <hr class="divider"/>
-
-  
 
   <!-- FAQ -->
   <section id="faq">
@@ -1045,16 +1029,17 @@
 
   <!-- CONTACT -->
   <section id="contact">
-  <div class="container">
-    <p class="section-label fade-up" style="font-size:1rem;font-weight:700;letter-spacing:0.35em;">有　問　必　答</p>
-    <h2 class="section-title fade-up" style="transition-delay:0.05s;font-size:clamp(2rem,5vw,3rem);">八大行業<br/>到底長什麼樣子</h2>
-    <p class="section-desc fade-up" style="transition-delay:0.1s;">問問題 不代表你要來做<br>但如果你不問我<br>你永遠不會知道</p>
-    <div style="text-align:center;" class="fade-up" style="transition-delay:0.15s;">
-      <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="contact-cta-btn">點我詢問工作</a>
-      <p class="contact-note" style="margin-top:12px;">我會親自回覆　不是 AI 回覆</p>
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-badge fade-up">有問必答</div>
+        <p class="contact-sub fade-up" style="transition-delay:0.05s;">問問題 不代表你要來做<br>但如果你不問我<br>你永遠不會知道</p>
+        <h2 class="fade-up" style="font-size:clamp(2.4rem,6vw,4rem);font-weight:900;line-height:1.2;letter-spacing:0.04em;text-align:center;background:linear-gradient(135deg,#c8a96e 0%,#f0d898 45%,#c8a96e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;margin:8px 0 4px;font-family:'Noto Serif TC',serif;transition-delay:0.1s;">八大行業<br/>到底長什麼樣子</h2>
+        <p class="fade-up" style="font-size:clamp(0.9rem,2vw,1rem);font-weight:400;color:#666;letter-spacing:0.15em;line-height:2;text-align:center;margin-bottom:32px;transition-delay:0.15s;">不管你問什麼　我都有問必答</p>
+        <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="contact-cta-btn fade-up" style="transition-delay:0.2s">點我詢問工作</a>
+        <p class="contact-note fade-up" style="transition-delay:0.25s">我會親自回覆　不是 AI 回覆</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <hr class="divider"/>
 
