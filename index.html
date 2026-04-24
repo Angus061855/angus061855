@@ -961,32 +961,38 @@
           <div class="quiz-progress-dot" id="qd2"></div>
         </div>
         <!-- Q1 -->
-        <div class="quiz-step active" id="qs0">
-          <p class="quiz-q">你現在最主要的考量是什麼？</p>
-          <div class="quiz-options">
-            <button class="quiz-opt" onclick="quizNext(0,0)">需要快速增加收入</button>
-            <button class="quiz-opt" onclick="quizNext(0,1)">想要時間更彈性自由</button>
-            <button class="quiz-opt" onclick="quizNext(0,2)">只是好奇想了解看看</button>
-          </div>
-        </div>
-        <!-- Q2 -->
-        <div class="quiz-step" id="qs1">
-          <p class="quiz-q">你對八大行業最擔心的是什麼？</p>
-          <div class="quiz-options">
-            <button class="quiz-opt" onclick="quizNext(1,0)">隱私問題　怕被認識的人知道</button>
-            <button class="quiz-opt" onclick="quizNext(1,1)">合約問題　怕被綁住走不了</button>
-            <button class="quiz-opt" onclick="quizNext(1,2)">完全不了解　不知道從哪裡問起</button>
-          </div>
-        </div>
-        <!-- Q3 -->
-        <div class="quiz-step" id="qs2">
-          <p class="quiz-q">你希望怎麼開始？</p>
-          <div class="quiz-options">
-            <button class="quiz-opt" onclick="quizNext(2,0)">先問問題　了解清楚再說</button>
-            <button class="quiz-opt" onclick="quizNext(2,1)">先看看資訊　自己研究一下</button>
-            <button class="quiz-opt" onclick="quizNext(2,2)">直接了解　有興趣就快速行動</button>
-          </div>
-        </div>
+<div class="quiz-step active" id="qs0">
+  <p class="quiz-q">你現在最主要的考量是什麼？</p>
+  <div class="quiz-options">
+    <button class="quiz-opt" onclick="quizNext(0,0)">1. 需要快速增加收入</button>
+    <button class="quiz-opt" onclick="quizNext(0,1)">2. 想要時間更彈性自由</button>
+    <button class="quiz-opt" onclick="quizNext(0,2)">3. 只是好奇想了解看看</button>
+    <button class="quiz-opt" onclick="quizNext(0,3)">4. 其他</button>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="quiz-step" id="qs1">
+  <p class="quiz-q">你對八大行業最擔心的是什麼？</p>
+  <div class="quiz-options">
+    <button class="quiz-opt" onclick="quizNext(1,0)">1. 隱私問題　怕被認識的人知道</button>
+    <button class="quiz-opt" onclick="quizNext(1,1)">2. 合約問題　怕被綁住走不了</button>
+    <button class="quiz-opt" onclick="quizNext(1,2)">3. 完全不了解　不知道從哪裡問起</button>
+    <button class="quiz-opt" onclick="quizNext(1,3)">4. 其他</button>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="quiz-step" id="qs2">
+  <p class="quiz-q">你希望怎麼開始？</p>
+  <div class="quiz-options">
+    <button class="quiz-opt" onclick="quizNext(2,0)">1. 先問問題　了解清楚再說</button>
+    <button class="quiz-opt" onclick="quizNext(2,1)">2. 先看看資訊　自己研究一下</button>
+    <button class="quiz-opt" onclick="quizNext(2,2)">3. 直接了解　有興趣就快速行動</button>
+    <button class="quiz-opt" onclick="quizNext(2,3)">4. 其他</button>
+  </div>
+</div>
+
         <!-- 結果 -->
         <div class="quiz-step" id="qs-result">
           <div class="quiz-result" id="quizResultBox">
