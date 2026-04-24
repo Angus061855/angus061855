@@ -554,19 +554,6 @@
     .stay-toast p { font-size: 0.85rem; color: #c0b8a8; line-height: 1.8; letter-spacing: 0.04em; margin-bottom: 12px; }
     .stay-toast a { display: block; background: linear-gradient(135deg, #c8a96e, #e0c080); color: #0a0a0a; font-weight: 900; font-size: 0.82rem; text-align: center; padding: 9px 16px; border-radius: var(--radius-btn); text-decoration: none; letter-spacing: 0.1em; }
 
-    /* 13. 離開意圖彈窗 */
-    .exit-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.35s; }
-    .exit-overlay.show { opacity: 1; pointer-events: auto; }
-    .exit-modal { background: linear-gradient(160deg, rgba(20,16,10,0.99), rgba(12,10,8,0.98)); border: 1px solid rgba(200,169,110,0.35); border-radius: 8px; padding: 40px 36px; max-width: 420px; width: 100%; text-align: center; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.6); }
-    .exit-modal::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(200,169,110,0.6), transparent); }
-    .exit-modal-close { position: absolute; top: 14px; right: 16px; background: none; border: none; color: #444; cursor: pointer; font-size: 1.1rem; transition: color 0.2s; }
-    .exit-modal-close:hover { color: var(--muted); }
-    .exit-modal h3 { font-size: 1.4rem; font-weight: 900; color: var(--accent2); margin-bottom: 12px; font-family: 'Noto Serif TC', serif; line-height: 1.4; }
-    .exit-modal p { font-size: 0.9rem; color: var(--muted); line-height: 2; margin-bottom: 28px; letter-spacing: 0.04em; }
-    .exit-modal a { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #c8a96e, #e0c080); color: #0a0a0a; font-weight: 900; font-size: 1rem; padding: 14px 40px; border-radius: var(--radius-btn); text-decoration: none; letter-spacing: 0.12em; box-shadow: 0 4px 24px rgba(200,169,110,0.3); }
-    .exit-modal-skip { display: block; margin-top: 14px; width: 100%; text-align: center; font-size: 0.78rem; color: #444; cursor: pointer; letter-spacing: 0.08em; transition: color 0.2s; background: none; border: none; font-family: 'Noto Sans TC', sans-serif; }
-    .exit-modal-skip:hover { color: #666; }
-
     /* 11. 夜間限定文案 banner */
     .night-banner {
       display: none;
@@ -621,17 +608,6 @@
     <button class="stay-toast-close" onclick="document.getElementById('stayToast').classList.remove('show')">✕</button>
     <p>還在考慮嗎？<br>問問題完全免費　不代表你要來做</p>
     <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer">直接問我 →</a>
-  </div>
-
-  <!-- 13. 離開意圖彈窗 -->
-  <div class="exit-overlay" id="exitOverlay">
-    <div class="exit-modal">
-      <button class="exit-modal-close" onclick="closeExit()">✕</button>
-      <h3>等一下<br/>你還沒問我任何問題</h3>
-      <p>問了不代表你要來做<br>但如果你不問<br>你永遠不會知道答案</p>
-      <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer">我問一個問題</a>
-      <button class="exit-modal-skip" onclick="closeExit()">我再想想</button>
-    </div>
   </div>
 
   <a href="https://line.me/ti/p/tTUQTPHKrE" target="_blank" rel="noopener noreferrer" class="float-line" id="floatLine">
@@ -1261,7 +1237,6 @@
       document.getElementById('qs' + (step + 1)).classList.add('active');
     } else {
       const r = quizResults[ans] || quizResults[0];
-      document.getElementById('quizEmoji').textContent = r.emoji;
       document.getElementById('quizTitle').textContent = r.title;
       document.getElementById('quizDesc').innerHTML = r.desc;
       document.getElementById('qs-result').classList.add('active');
@@ -1294,22 +1269,6 @@
       setTimeout(() => document.getElementById('stayToast').classList.remove('show'), 8000);
     }
   }, 30000);
-
-  /* ── 13. 離開意圖攔截 ── */
-  let exitShown = false;
-  document.addEventListener('mouseleave', e => {
-    if (e.clientY <= 0 && !exitShown) {
-      exitShown = true;
-      document.getElementById('exitOverlay').classList.add('show');
-    }
-  });
-  function closeExit() {
-    document.getElementById('exitOverlay').classList.remove('show');
-  }
-  document.getElementById('exitOverlay').addEventListener('click', e => {
-    if (e.target === document.getElementById('exitOverlay')) closeExit();
-  });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeExit(); });
 
   /* ── 流動絲絨背景 ── */
   (function() {
