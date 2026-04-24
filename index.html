@@ -1095,12 +1095,21 @@
   counterObserver.observe(heroSection);
 
   /* ── 2. 本週詢問人數 ── */
-  (function() {
-    const now = new Date();
-    const seed = now.getFullYear() * 100 + now.getMonth() * 10 + Math.floor(now.getDate() / 7);
-    const count = 38 + (seed % 29);
-    document.getElementById('weekly-count').textContent = count;
-  })();
+(function() {
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours();
+
+  // 週一~週六累積基數（每天約+17人）
+  const base = [0, 15, 32, 49, 66, 83, 100];
+  const dayIndex = day === 0 ? 6 : day - 1;
+
+  // 當天已過時數換算（每小時約 0.7 人，一天約+17）
+  const todayExtra = Math.floor(hour * 0.7);
+
+  const count = base[dayIndex] + todayExtra;
+  document.getElementById('weekly-count').textContent = count;
+})();
 
   /* ── 瀏覽數 ── */
   function getBaseViews(slug) { let h=0; for(let i=0;i<slug.length;i++) h=(h*31+slug.charCodeAt(i))&0xffffffff; return 1235+(Math.abs(h)%(4257-1235+1)); }
