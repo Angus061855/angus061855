@@ -365,10 +365,6 @@
     .compare-card.us .compare-title { color: var(--accent2); }
     .compare-card.them .compare-title { color: #c06060; }
     .compare-card.them .compare-list li { color: #a08080; }
-    .compare-list li::before { flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
-    .compare-card.us .compare-list li::before { content: '✓'; color: var(--accent); }
-    .compare-card.them .compare-list li::before { content: '✗'; color: #c04040; }
-    .compare-list li::before { flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
     .compare-card.us .compare-list li::before { content: '✓'; color: var(--accent); }
     .compare-card.them .compare-list li::before { content: '✗'; color: #444; }
     @media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
@@ -842,27 +838,27 @@
           <span class="compare-tag">大頭 · AS娛樂</span>
           <div class="compare-title">誠實經紀人</div>
           <ul class="compare-list">
-            <li>不簽任何合約　想離職隨時可以離職</li>
-            <li>薪水週六準時入帳　不壓薪水 想現領也可以</li>
-            <li>上班前完整說明　沒有隱藏扣款費用</li>
-            <li>本人親自回覆　不是助理或 AI 回覆</li>
-            <li>個資嚴格保密　不外流出去</li>
-            <li>問了不代表要做　無任何壓力</li>
-            <li>七年口碑　個人運作 靠真實評價累積</li>
-          </ul>
+  <li><span style="color:var(--accent);margin-right:8px;flex-shrink:0;">✓</span>不簽任何合約　想離職隨時可以離職</li>
+  <li><span style="color:var(--accent);margin-right:8px;flex-shrink:0;">✓</span>薪水週六準時入帳　不壓薪水 想現領也可以</li>
+  <li><span style="color:var(--accent);margin-right:8px;flex-shrink:0;">✓</span>上班前完整說明　沒有隱藏扣款費用</li>
+  <li><span style="color:var(--accent);margin-right:8px;flex-shrink:0;">✓</span>本人親自回覆　不是助理或 AI 回覆</li>
+  <li><span style="color:var(--accent);margin-right:8px;flex-shrink:0;">✓</span>個資嚴格保密　不外流出去</li>
+  <li><span style="color:var(--accent);margin-right:8px;flex-shrink:0;">✓</span>問了不代表要做　無任何壓力</li>
+  <li><span style="color:var(--accent);margin-right:8px;flex-shrink:0;">✓</span>七年口碑　個人運作 靠真實評價累積</li>
+</ul>
         </div>
         <div class="compare-card them">
           <span class="compare-tag">其他經紀人</span>
           <div class="compare-title">常見狀況</div>
           <ul class="compare-list">
-            <li>要求簽合約　離開要賠違約金</li>
-            <li>以各種理由壓薪水拖延發放</li>
-            <li>上班後才發現有不合理扣款項目</li>
-            <li>助理或群組統一回覆</li>
-            <li>個資可能流向你的家人、朋友、男友</li>
-            <li>用話術製造緊迫感催你決定</li>
-            <li>與你發生感情關係 非常失職的行為</li>
-          </ul>
+  <li><span style="color:#c04040;margin-right:8px;flex-shrink:0;">✗</span>要求簽合約　離開要賠違約金</li>
+  <li><span style="color:#c04040;margin-right:8px;flex-shrink:0;">✗</span>以各種理由壓薪水拖延發放</li>
+  <li><span style="color:#c04040;margin-right:8px;flex-shrink:0;">✗</span>上班後才發現有不合理扣款項目</li>
+  <li><span style="color:#c04040;margin-right:8px;flex-shrink:0;">✗</span>助理或群組統一回覆</li>
+  <li><span style="color:#c04040;margin-right:8px;flex-shrink:0;">✗</span>個資可能流向你的家人、朋友、男友</li>
+  <li><span style="color:#c04040;margin-right:8px;flex-shrink:0;">✗</span>用話術製造緊迫感催你決定</li>
+  <li><span style="color:#c04040;margin-right:8px;flex-shrink:0;">✗</span>與你發生感情關係 非常失職的行為</li>
+</ul>
         </div>
       </div>
     </div>
